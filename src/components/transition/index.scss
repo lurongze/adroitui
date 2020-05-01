@@ -1,0 +1,61 @@
+@import "../base.scss";
+.transition-container {
+    position: fixed;
+    width: 100vw;
+    left: 0;
+    bottom: 0;
+    z-index: 500;
+    transform: translate3d(0, 100%, 0);
+}
+.transition-mask {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    z-index: 400;
+    background-color: rgba(#000, 0.5);
+    display: none;
+}
+.fadeShow {
+    display: block;
+    animation: fadeIn 0.05s ease forwards;
+}
+.slideShow {
+    animation: slideInUp 0.3s ease-in-out forwards;
+}
+.slideHide {
+    animation: slideDown 0.2s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        transform: translate3d(0, 100%, 0);
+        visibility: visible;
+    }
+
+    to {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translate3d(0, 0, 0);
+    }
+
+    to {
+        transform: translate3d(0, 100%, 0);
+        visibility: visible;
+    }
+}

@@ -1,0 +1,68 @@
+import Taro, { Component, Config } from '@tarojs/taro'
+import { View } from '@tarojs/components'
+import AButton from '../../components/button/index';
+import ActionSheet from '../../components/action-sheet/index';
+import './button.scss'
+
+export default class Index extends Component {
+
+  componentWillMount() { }
+
+  componentDidMount() { }
+
+  componentWillUnmount() { }
+
+  componentDidShow() { }
+
+  componentDidHide() { }
+
+  state = {
+    loading: false
+  }
+  /**
+   * 指定config的类型声明为: Taro.Config
+   *
+   * 由于 typescript 对于 object 类型推导只能推出 Key 的基本类型
+   * 对于像 navigationBarTextStyle: 'black' 这样的推导出的类型是 string
+   * 提示和声明 navigationBarTextStyle: 'black' | 'white' 类型冲突, 需要显示声明类型
+   */
+  config: Config = {
+    navigationBarTitleText: '按钮说明'
+  }
+
+  setLoading = (e) => {
+    console.log('setLoading', e);
+    this.setState({
+      loading: true
+    })
+  }
+  clickAc = (e)=>{
+    console.log('clickAc', e);
+    this.setState({
+      loading: false
+    })
+  }
+
+  render() {
+    const { loading = false } = this.state;
+    return (
+      <View className='index'>
+        <View className='cc'>
+          <AButton loading={loading} onClick={this.setLoading.bind(this, 'nihao')}>页面主操作</AButton>
+          <AButton loading={true}>页面主操作</AButton>
+          <AButton type='warn'>页面主操作</AButton>
+          <AButton type='warn' loading={true}>页面主操作</AButton>
+          <AButton type='secondary'>页面次要操作</AButton>
+
+          <AButton size='mini'>按钮</AButton>
+          <AButton type='warn' size='mini'>按钮</AButton>
+          <AButton type='secondary' size='mini'>按钮</AButton>
+        </View>
+
+        <ActionSheet clickItem={this.clickAc.bind(this)} onHide={() => { this.setState({ loading: false }) }} show={loading} title='这是一个标题' actions={[{ key: '23', text: '示例菜单' }, { key: '455', text: '示例菜单2' }]} />
+
+
+      </View>
+    )
+  }
+}

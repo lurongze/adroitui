@@ -1,0 +1,30 @@
+@import "../base.scss";
+.action-sheet{
+    background-color: #ffffff;
+    width: 100vw;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    & .sheet-item{
+        display: flex;
+        width: 100vw;
+        padding: 28px 0;
+        font-size: $regular-font-size-2;
+        color: $font-color-black;
+        justify-content: center;
+        border-top: 1px solid #F2F6FC;
+        &.title{
+            border-top: none;
+            font-size: $regular-font-size-3;
+            color: $font-color-grey;
+        }
+        &.cancel{
+            border-top: 15px solid #F2F6FC;
+        }
+        &:active{
+            background-color: $active-bg-color;
+        }
+    }
+    
+}

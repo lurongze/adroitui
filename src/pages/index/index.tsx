@@ -1,5 +1,6 @@
 import Taro, { Component, Config } from '@tarojs/taro'
-import { View, Text } from '@tarojs/components'
+import { View, Navigator } from '@tarojs/components'
+import AButton from '../../components/button/index';
 import './index.scss'
 
 export default class Index extends Component {
@@ -28,7 +29,11 @@ export default class Index extends Component {
   render () {
     return (
       <View className='index'>
-        <Text>Hello world!</Text>
+        
+        <Navigator url='/pages/button/button'>
+        <AButton>按钮页面</AButton>
+        </Navigator>
+        
       </View>
     )
   }

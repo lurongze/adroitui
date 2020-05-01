@@ -28,7 +28,8 @@ class App extends Component {
    */
   config: Config = {
     pages: [
-      'pages/index/index'
+      'pages/index/index',
+      'pages/button/button'
     ],
     window: {
       backgroundTextStyle: 'light',
@@ -48,3 +49,4 @@ class App extends Component {
 }
 
 Taro.render(<App />, document.getElementById('app'))
+
