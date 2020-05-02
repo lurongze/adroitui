@@ -7,14 +7,19 @@
     z-index: 500;
     transform: translate3d(0, 100%, 0);
 }
-.transition-mask {
+.transition-bounce{
     position: fixed;
     width: 100vw;
     height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 500;
     left: 0;
     top: 0;
-    z-index: 400;
-    background-color: rgba(#000, 0.5);
+    transform: translate3d(0, 100%, 0);
+}
+.transition-mask {
     display: none;
 }
 .fadeShow {
@@ -26,6 +31,13 @@
 }
 .slideHide {
     animation: slideDown 0.2s ease-in-out forwards;
+}
+
+.bounceIn {
+    animation: bounceInFrame 0.3s ease-in-out forwards;
+}
+.bounceOut {
+    animation: bounceOutFrame 0.1s ease forwards;
 }
 
 @keyframes fadeIn {
@@ -59,3 +71,58 @@
         visibility: visible;
     }
 }
+
+@keyframes bounceInFrame {
+    from,
+    20%,
+    40%,
+    60%,
+    80%,
+    to {
+        animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+
+    0% {
+        opacity: 0;
+        transform: scale3d(0.3, 0.3, 0.3);
+    }
+
+    20% {
+        transform: scale3d(1.1, 1.1, 1.1);
+    }
+
+    40% {
+        transform: scale3d(0.9, 0.9, 0.9);
+    }
+
+    60% {
+        opacity: 1;
+        transform: scale3d(1.03, 1.03, 1.03);
+    }
+
+    80% {
+        transform: scale3d(0.97, 0.97, 0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+@keyframes bounceOutFrame {
+    20% {
+      transform: scale3d(0.9, 0.9, 0.9);
+    }
+  
+    50%,
+    55% {
+      opacity: 1;
+      transform: scale3d(1.1, 1.1, 1.1);
+    }
+  
+    to {
+      opacity: 0;
+      transform: scale3d(0.3, 0.3, 0.3);
+    }
+  }

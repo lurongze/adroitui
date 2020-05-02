@@ -1,0 +1,40 @@
+@import "../base.scss";
+.toast-mask{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    
+    &.toastAnimate{
+        display: flex;
+        animation: toastFrame ease-in-out forwards;
+    }
+    & .toast{
+        background-color: #4c4c4c;
+        color: #ffffff;
+        font-size: $regular-font-size-3;
+        padding: 15px 25px;
+        border-radius: 9px;
+        transform: translateY(-10vh);
+    }
+}
+
+@keyframes toastFrame {
+    0% {
+        opacity: 0;
+    }
+
+    30% {
+        opacity: 1;
+    }
+
+
+    70%{
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+

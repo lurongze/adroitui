@@ -29,7 +29,7 @@ export default (props: propsType) => {
   },[show])
   return (
     <Block>
-      <View onClick={()=>handleHide()} className={`transition-mask ${show?'fadeShow':''}`}></View>
+      <View onClick={()=>handleHide()} className={`transition-mask mask-base ${show?'fadeShow':''}`}></View>
       <View className={`transition-container ${slideClass}`}>
         {children}
       </View>

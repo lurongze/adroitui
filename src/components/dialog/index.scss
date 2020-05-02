@@ -1,0 +1,50 @@
+@import "../base.scss";
+.dialog-container {
+    background-color: #ffffff;
+    border-radius: 18px;
+    width: 80vw;
+    min-height: 60vw;
+    display: flex;
+    flex-direction: column;
+    transform: translateY(-5vh);
+    & .header{
+        width: 100%;
+        line-height: 3rem;
+        text-align: center;
+        font-weight: 700;
+        color: $font-color-black;
+        font-size: $regular-font-size-2;
+    }
+
+    & .content{
+        flex: 1;
+        color: $font-color-desc;
+        font-size: $regular-font-size-3;
+        box-sizing: border-box;
+        padding: 15px;
+    }
+
+    & .action{
+        width: 100%;
+        border-top: 1px solid $border-color;
+        display: flex;
+        & .btn{
+            flex: 1;
+            font-size: $regular-font-size-2;
+            font-weight: 600;
+            text-align: center;
+            padding: 25px 0;
+            color: $link-color;
+            &.cancel{
+                color: $font-color-black;
+                box-sizing: border-box;
+                border-right: 1px solid $border-color;
+            }
+            &:active{
+                background-color: $active-bg-color;
+                border-bottom-left-radius: 18px;
+                border-bottom-right-radius: 18px;
+            }
+        }
+    }
+}

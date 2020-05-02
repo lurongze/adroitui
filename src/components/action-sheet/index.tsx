@@ -1,6 +1,6 @@
-import Taro, { useEffect } from '@tarojs/taro';
+import Taro from '@tarojs/taro';
 import { View } from '@tarojs/components';
-import Transition from '../transition/index';
+import TransitionSlide from '../transition/slide';
 import './index.scss';
 
 interface propsType {
@@ -22,16 +22,16 @@ export default (props: propsType) => {
     onHide && onHide();
   }
   return (
-    <Transition show={show} onHide={() => handleHide()}>
+    <TransitionSlide show={show} onHide={() => handleHide()}>
       <View className='action-sheet'>
         <View className='title sheet-item'>{title}</View>
         {
           actions.map((item: { key: string, text: string }) => {
-            return (<View className='sheet-item' key={item.key} onClick={() => handleClickItem(item.key)}>{item.text}</View>)
+            return (<View className='sheet-item action' key={item.key} onClick={() => handleClickItem(item.key)}>{item.text}</View>)
           })
         }
         <View className='sheet-item cancel' onClick={() => handleHide()}>{cancelText}</View>
       </View>
-    </Transition>
+    </TransitionSlide>
   )
 }

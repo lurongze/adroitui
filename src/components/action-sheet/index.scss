@@ -13,16 +13,16 @@
         font-size: $regular-font-size-2;
         color: $font-color-black;
         justify-content: center;
-        border-top: 1px solid #F2F6FC;
+        border-top: 1px solid $border-color;
         &.title{
             border-top: none;
-            font-size: $regular-font-size-3;
+            font-size: $regular-font-size-4;
             color: $font-color-grey;
         }
         &.cancel{
-            border-top: 15px solid #F2F6FC;
+            border-top: 15px solid $border-color;
         }
-        &:active{
+        &.action:active{
             background-color: $active-bg-color;
         }
     }

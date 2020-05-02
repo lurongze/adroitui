@@ -2,6 +2,13 @@ import Taro, { Component, Config } from '@tarojs/taro'
 import { View } from '@tarojs/components'
 import AButton from '../../components/button/index';
 import ActionSheet from '../../components/action-sheet/index';
+
+import HalfScreenDialog from '../../components/half-screen-dialog/index';
+
+import Dialog from '../../components/dialog/index';
+import AdToast from '../../components/toast/index';
+import ToolTips from '../../components/tooltips/index';
+
 import './button.scss'
 
 export default class Index extends Component {
@@ -58,8 +65,18 @@ export default class Index extends Component {
           <AButton type='warn' size='mini'>按钮</AButton>
           <AButton type='secondary' size='mini'>按钮</AButton>
         </View>
-
-        <ActionSheet clickItem={this.clickAc.bind(this)} onHide={() => { this.setState({ loading: false }) }} show={loading} title='这是一个标题' actions={[{ key: '23', text: '示例菜单' }, { key: '455', text: '示例菜单2' }]} />
+        {/* <HalfScreenDialog showBtns={false} clickItem={this.clickAc.bind(this)} showClose={false} onHide={() => { this.setState({ loading: false }) }} show={loading} desc='我来描述一下'>
+        <View className='cc'>
+          <AButton type='secondary' size='mini'>按钮</AButton>
+        </View>
+        </HalfScreenDialog> */}
+        <ToolTips type='warn' onHide={() => { this.setState({ loading: false }) }} show={loading} title='这是一个标题' />
+        {/* <Dialog content='哈哈哈哈哈哈哈' showClose={false} onConfirm={this.clickAc.bind(this)} onHide={() => { this.setState({ loading: false }) }} show={loading}>
+          <View>
+          fefsfdsfsd fsd sdf 
+          </View>
+        </Dialog> */}
+        {/* <ActionSheet clickItem={this.clickAc.bind(this)} onHide={() => { this.setState({ loading: false }) }} show={loading} title='这是一个标题' actions={[{ key: '23', text: '示例菜单' }, { key: '455', text: '示例菜单2' }]} /> */}
 
 
       </View>

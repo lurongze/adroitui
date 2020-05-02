@@ -1,0 +1,51 @@
+@import "../base.scss";
+.tooltips{
+    position: fixed;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+    line-height: 1.4rem;
+    font-size: $regular-font-size-3;
+    color: white;
+    background-color: rgba(#000000, .8);
+    transform: translateY(-100%);
+    &.tipsAnimate{
+        animation: tooltipFrame ease-in-out forwards;
+    }
+    &.tipsAnimate1{
+        animation: tooltipFrame1 ease-in-out forwards;
+    }
+    &.warn{
+        background-color: $warn-color;
+    }
+}
+
+@keyframes tooltipFrame{
+    from {
+        transform: translateY(-100%);
+    }
+
+    20%{
+        transform: translateY(0);
+    }
+
+    90%{
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-100%);
+    }
+}
+@keyframes tooltipFrame1{
+    from {
+        transform: translateY(-100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}

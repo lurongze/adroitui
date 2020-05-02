@@ -1,0 +1,49 @@
+@import "../base.scss";
+.container{
+    background-color: #ffffff;
+    width: 100vw;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    & .header{
+        display: flex;
+        align-items: center;
+        width: 100vw;
+        & .icon{
+            padding: 0 20px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+        & .center{
+            flex: 1;
+            text-align: center;
+            padding-top: 10px;
+            &.no-close{
+                text-align: left;
+                text-indent: 1rem;
+            }
+            & .title{
+                font-size: $regular-font-size-2;
+                color: $font-color-black;
+            }
+            & .desc{
+                font-size: $regular-font-size-3;
+                color: $font-color-grey;
+                padding: 5px 0;
+            }
+        }
+    }
+
+    & .cotent{
+        display: flex;
+        width: 100vw;
+    }
+    & .action-btn{
+        display: flex;
+        width: 100vw;
+        padding: 20px 0;
+        justify-content: space-evenly;
+    }
+}

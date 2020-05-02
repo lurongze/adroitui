@@ -7,16 +7,23 @@ interface propsType{
   children?: any,
   type?: string,
   size?: string,
+  width?: string,
   onClick?: Function
 }
 
 export default (props: propsType) => {
-  const {loading, children,type='',size='', onClick} = props;
+  const {loading, children,type='',size='',width='', onClick} = props;
   const handleClick = ()=> {
     onClick && onClick();
   }
+  let styleObj = {};
+  if(width !== ''){
+    styleObj = {
+      width: width
+    }
+  }
   return (
-    <View onClick={()=>handleClick()} className={`ad-button ${loading?'loading':''} ${type} ${size}`}>
+    <View style={styleObj} onClick={()=>handleClick()} className={`ad-button ${loading?'loading':''} ${type} ${size}`}>
       {loading && (<Text className='ad-loading'></Text>)}
       {children}
     </View>
