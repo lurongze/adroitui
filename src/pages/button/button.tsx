@@ -8,6 +8,7 @@ import HalfScreenDialog from '../../components/half-screen-dialog/index';
 import Dialog from '../../components/dialog/index';
 import AdToast from '../../components/toast/index';
 import ToolTips from '../../components/tooltips/index';
+import Tabs from '../../components/tabs/index';
 
 import './button.scss'
 
@@ -24,7 +25,18 @@ export default class Index extends Component {
   componentDidHide() { }
 
   state = {
-    loading: false
+    loading: false,
+    tabActive: '',
+    tabList: [
+      { title: '热门', key: 'hot'},
+      { title: '娱乐', key: 'entertainment'},
+      { title: '体育', key: 'tiyu'},
+      { title: '国内', key: 'guonei'},
+      { title: '财经', key: 'econemy'},
+      { title: '科技', key: 'science'},
+      { title: '教育', key: 'jy'},
+      { title: '汽车', key: 'cart'}
+    ]
   }
   /**
    * 指定config的类型声明为: Taro.Config
@@ -44,9 +56,14 @@ export default class Index extends Component {
     })
   }
   clickAc = (e)=>{
-    console.log('clickAc', e);
     this.setState({
       loading: false
+    })
+  }
+
+  switchTab = (e)=>{
+    this.setState({
+      tabActive: e
     })
   }
 
@@ -54,6 +71,7 @@ export default class Index extends Component {
     const { loading = false } = this.state;
     return (
       <View className='index'>
+
         <View className='cc'>
           <AButton loading={loading} onClick={this.setLoading.bind(this, 'nihao')}>页面主操作</AButton>
           <AButton loading={true}>页面主操作</AButton>
@@ -65,19 +83,6 @@ export default class Index extends Component {
           <AButton type='warn' size='mini'>按钮</AButton>
           <AButton type='secondary' size='mini'>按钮</AButton>
         </View>
-        {/* <HalfScreenDialog showBtns={false} clickItem={this.clickAc.bind(this)} showClose={false} onHide={() => { this.setState({ loading: false }) }} show={loading} desc='我来描述一下'>
-        <View className='cc'>
-          <AButton type='secondary' size='mini'>按钮</AButton>
-        </View>
-        </HalfScreenDialog> */}
-        <ToolTips type='warn' onHide={() => { this.setState({ loading: false }) }} show={loading} title='这是一个标题' />
-        {/* <Dialog content='哈哈哈哈哈哈哈' showClose={false} onConfirm={this.clickAc.bind(this)} onHide={() => { this.setState({ loading: false }) }} show={loading}>
-          <View>
-          fefsfdsfsd fsd sdf 
-          </View>
-        </Dialog> */}
-        {/* <ActionSheet clickItem={this.clickAc.bind(this)} onHide={() => { this.setState({ loading: false }) }} show={loading} title='这是一个标题' actions={[{ key: '23', text: '示例菜单' }, { key: '455', text: '示例菜单2' }]} /> */}
-
 
       </View>
     )

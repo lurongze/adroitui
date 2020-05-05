@@ -1,40 +1,73 @@
-import Taro, { Component, Config } from '@tarojs/taro'
-import { View, Navigator } from '@tarojs/components'
-import AButton from '../../components/button/index';
-import './index.scss'
+import Taro, { useState } from "@tarojs/taro";
+import { View, Icon, Text } from "@tarojs/components";
+import "./index.scss";
 
-export default class Index extends Component {
-
-  componentWillMount () { }
-
-  componentDidMount () { }
-
-  componentWillUnmount () { }
-
-  componentDidShow () { }
-
-  componentDidHide () { }
-
-  /**
-   * 指定config的类型声明为: Taro.Config
-   *
-   * 由于 typescript 对于 object 类型推导只能推出 Key 的基本类型
-   * 对于像 navigationBarTextStyle: 'black' 这样的推导出的类型是 string
-   * 提示和声明 navigationBarTextStyle: 'black' | 'white' 类型冲突, 需要显示声明类型
-   */
-  config: Config = {
-    navigationBarTitleText: '首页'
+export default function Index() {
+  const list = [
+    {
+      title: "表单",
+      key: "form",
+      list: [
+        { title: "按钮", path: "/pages/button/button" },
+        { title: "Tab标签", path: "/pages/tabs/index" }
+      ]
+    },
+    {
+      title: "操作反馈",
+      key: "feedback",
+      list: [
+        { title: "Dialog", path: "/pages/button/button" },
+        { title: "ActionSheet", path: "/pages/button/button" },
+        { title: "HalfScreenDialog", path: "/pages/button/button" }
+      ]
+    }
+  ];
+  const [openKey, setOpenKey] = useState("base");
+  const toogleOpen = (tapKey:string)=>{
+    if(tapKey === openKey){
+      setOpenKey('');
+    } else {
+      setOpenKey(tapKey);
+    }
   }
 
-  render () {
-    return (
-      <View className='index'>
-        
-        <Navigator url='/pages/button/button'>
-        <AButton>按钮页面</AButton>
-        </Navigator>
-        
-      </View>
-    )
+  const toPage = (pagePath:string){
+    Taro.navigateTo({
+      url: pagePath
+    });
   }
+
+  return (
+    <View className="body">
+      <View className="title">Adroit UI 组件库</View>
+      <View className="description">一个微信风格的UI组件库</View>
+
+      {list.map((item: any) => {
+        return (
+          <View className="module-list" key={item.title}>
+            <View className={`header ${item.key === openKey?'open':''}`} onClick={() => toogleOpen(item.key)}>
+              <Text>{item.title}</Text>
+              <Icon size="20" type="success" />
+            </View>
+            <View
+              className={`components ${item.key === openKey?'open'+item.list.length:''}`}
+            >
+              {item.list.map((sitem: any) => {
+                return (
+                  <View className="component-list" key={sitem.title} onClick={()=>toPage(sitem.path)}>
+                    <Text>{sitem.title}</Text>
+                    <Icon size="20" type="success" />
+                  </View>
+                );
+              })}
+            </View>
+          </View>
+        );
+      })}
+    </View>
+  );
 }
+
+Index.confing = {
+  navigationBarTitleText: "首页"
+};

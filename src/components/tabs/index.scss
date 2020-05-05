@@ -1,0 +1,35 @@
+@import "../base.scss";
+.tabs{
+    width: 100vw;
+    height: 80px;
+    white-space: nowrap;
+    background-color: #ffffff;
+    & .tab-item{
+        display: inline-flex;
+        height: 100%;
+        align-items: center;
+        padding: 0 30px;
+        font-size: $regular-font-size-3;
+        color: $font-color-black;
+        position: relative;
+        & .tab-line{
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: $main-color;
+            border-color: $main-color;
+            display: block;
+            height: 6px;
+            width: 0;
+            transition: width .1s ease-in-out;
+        }
+        &.active{
+            font-weight: 600;
+            color: $main-color;
+            & .tab-line{
+                width: 100%;
+            }
+        }
+    }
+}

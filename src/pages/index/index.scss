@@ -1,6 +1,109 @@
-page{
-    background-color: #ededed;
-}
-view{
+
+.body {
+  background-color: #ededed;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  & .title {
+    width: 100vw;
+    font-size: 40px;
+    font-weight: 700;
+    color: black;
+    padding: 0 50px;
+    box-sizing: border-box;
     margin-top: 20px;
+  }
+  & .description {
+    font-size: 28px;
+    color: #888888;
+    padding: 0 50px;
+    width: 100vw;
+    box-sizing: border-box;
+    margin: 50px 0;
+  }
+  & .module-list {
+    width: 90vw;
+    box-sizing: border-box;
+    & .header {
+      margin-top: 25px;
+      height: 150px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      padding: 0 25px;
+      box-sizing: border-box;
+      color: black;
+      background-color: #ffffff;
+      justify-content: space-between;
+      &.open{
+          color: #888888;
+      }
+    }
+    & .components {
+        display: block;
+        height: 0;
+        overflow:hidden;
+        transition: height .5s;
+      & .component-list {
+        box-sizing: border-box;
+        height: 120px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        padding: 0 25px;
+        color: black;
+        border-bottom: 1px solid #F2F6FC;
+        justify-content: space-between;
+        background-color: #ffffff;
+        &:active{
+            background-color: #e6e6e6;
+        }
+      }
+      & .component-list:last-child{
+          border-bottom: none;
+      }
+      &.open1{
+        height: 120px;
+      }
+      &.open2{
+        height: 240px;
+      }
+      &.open3{
+        height: 360px;
+      }
+      &.open4{
+        height: 480px;
+      }
+      &.open5{
+        height: 600px;
+      }
+      &.open6{
+        height: 720px;
+      }
+      &.open7{
+        height: 840px;
+      }
+      &.open8{
+        height: 960px;
+      }
+      &.open9{
+        height: 1080px;
+      }
+      &.open10{
+        height: 1200px;
+      }
+
+    }
+    
+  }
+}
+
+@keyframes slidShow{
+    from {
+        height: 0;
+    }
+
+    to {
+        height: auto;
+    }
 }
