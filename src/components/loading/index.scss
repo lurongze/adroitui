@@ -1,0 +1,29 @@
+@import "../base.scss";
+.loading{
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+}
+.loading-ring {
+  width: 20px;
+  height: 20px;
+  box-sizing: border-box;
+  display: inline-block;
+//   position: absolute;
+  margin: 10px;
+  border-width: 4px;
+  border-style: solid;
+  border-color: #F2F6FC transparent transparent;
+  border-radius: 50%;
+  animation: loadingFrame 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+}
+
+@keyframes loadingFrame {
+  0% {
+    transform: rotate3d(0, 0, 1, 0deg);
+  }
+
+  100% {
+    transform: rotate3d(0, 0, 1, 360deg);
+  }
+}

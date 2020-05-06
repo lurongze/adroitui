@@ -1,6 +1,7 @@
 import Taro from '@tarojs/taro';
-import { View, Text } from '@tarojs/components';
+import { View } from '@tarojs/components';
 import LoadingIcon from '../icons/loading';
+import AdLoading from '../loading/index';
 import './index.scss';
 
 interface propsType{
@@ -26,7 +27,7 @@ export default (props: propsType) => {
   return (
     <View style={styleObj} onClick={()=>handleClick()} className={`ad-button ${loading?'loading':''} ${type} ${size}`}>
       {/* {loading && (<Text className='ad-loading'></Text>)} */}
-      {loading && <LoadingIcon/>}
+      {loading && <AdLoading/>}
       {children}
     </View>
   )
