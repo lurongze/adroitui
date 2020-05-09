@@ -3,11 +3,11 @@ import { View, Text } from "@tarojs/components";
 import "./index.scss";
 
 interface propsType {
-  children?: any;
-  size?: string; // 加上单位
-  color?: string;
-  text?: string;
-  onClick?: Function;
+  // children?: any, // 
+  size?: string, // loading的宽高，默认'20px'
+  color?: string, // 颜色
+  text?: string, // 文字
+  // onClick?: Function, // 
 }
 
 export default (props: propsType) => {
@@ -15,7 +15,7 @@ export default (props: propsType) => {
   let styleObj: Object = {};
   if (color !== "") {
     styleObj = Object.assign(styleObj, {
-      borderColor: color
+      borderColor: `${color} transparent transparent`
     });
   }
   if (size !== "") {
@@ -28,7 +28,7 @@ export default (props: propsType) => {
   return (
     <View className="loading">
       <View className="loading-ring" style={styleObj}></View>
-      {text && <Text>加载中...</Text>}
+      {text && <Text>{text}</Text>}
     </View>
   );
 };

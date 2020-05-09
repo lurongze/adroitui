@@ -1,90 +1,85 @@
-import Taro, { Component, Config } from '@tarojs/taro'
-import { View } from '@tarojs/components'
-import AButton from '../../components/button/index';
-import ActionSheet from '../../components/action-sheet/index';
+import Taro, { useState } from "@tarojs/taro";
+import { View } from "@tarojs/components";
+import { useSelector } from '@tarojs/redux';
+import ThemeControl from '../themeControl';
+import AButton from "../../components/button/index";
 
-import HalfScreenDialog from '../../components/half-screen-dialog/index';
+import "./button.scss";
 
-import Dialog from '../../components/dialog/index';
-import AdToast from '../../components/toast/index';
-import ToolTips from '../../components/tooltips/index';
-import Tabs from '../../components/tabs/index';
+export default function Index() {
 
-import './button.scss'
+  const themeStore = useSelector(s=>s.theme);
 
-export default class Index extends Component {
+  const [loading, setLoading] = useState<boolean>(false);
 
-  componentWillMount() { }
 
-  componentDidMount() { }
-
-  componentWillUnmount() { }
-
-  componentDidShow() { }
-
-  componentDidHide() { }
-
-  state = {
-    loading: false,
-    tabActive: '',
-    tabList: [
-      { title: '热门', key: 'hot'},
-      { title: '娱乐', key: 'entertainment'},
-      { title: '体育', key: 'tiyu'},
-      { title: '国内', key: 'guonei'},
-      { title: '财经', key: 'econemy'},
-      { title: '科技', key: 'science'},
-      { title: '教育', key: 'jy'},
-      { title: '汽车', key: 'cart'}
-    ]
-  }
-  /**
-   * 指定config的类型声明为: Taro.Config
-   *
-   * 由于 typescript 对于 object 类型推导只能推出 Key 的基本类型
-   * 对于像 navigationBarTextStyle: 'black' 这样的推导出的类型是 string
-   * 提示和声明 navigationBarTextStyle: 'black' | 'white' 类型冲突, 需要显示声明类型
-   */
-  config: Config = {
-    navigationBarTitleText: '按钮说明'
-  }
-
-  setLoading = (e) => {
-    console.log('setLoading', e);
-    this.setState({
-      loading: true
-    })
-  }
-  clickAc = (e)=>{
-    this.setState({
-      loading: false
-    })
-  }
-
-  switchTab = (e)=>{
-    this.setState({
-      tabActive: e
-    })
-  }
-
-  render() {
-    const { loading = false } = this.state;
-    return (
-      <View className='index'>
-
-        <View className='cc'>
-          <AButton loading={loading} onClick={this.setLoading.bind(this, 'nihao')}>页面主操作</AButton>
-          <AButton loading={true}>页面主操作</AButton>
-          <AButton type='warn'>页面主操作</AButton>
-          <AButton type='warn' loading={true}>页面主操作</AButton>
-          <AButton type='secondary'>页面次要操作</AButton>
-
-          <AButton size='mini'>按钮</AButton>
-          <AButton type='warn' size='mini'>按钮</AButton>
-          <AButton type='secondary' size='mini'>按钮</AButton>
-        </View>
-
+  return (
+    <View className={`page-padding ${themeStore.theme}`}>
+      <View className="lister">
+        <View className="desc">普通按钮，点击切换loading</View>
+        <AButton
+          className="btn"
+          loading={loading}
+          onClick={()=>setLoading(!loading)}
+        >
+          页面主操作
+        </AButton>
       </View>
-    )
-  }
+      <View className="lister">
+        <View className="desc">普通按钮，loading状态</View>
+        <AButton className="btn" loading={true}>
+          页面主操作
+        </AButton>
+      </View>
+      <View className="lister">
+        <View className="desc">type="warn"</View>
+        <AButton className="btn" type="warn">
+          页面主操作
+        </AButton>
+      </View>
+      <View className="lister">
+        <View className="desc">type="warn",loading=true</View>
+        <AButton className="btn" type="warn" loading={true}>
+          页面主操作
+        </AButton>
+      </View>
+      <View className="lister">
+        <View className="desc">type="secondary"</View>
+        <AButton className="btn" type="secondary">
+          页面次要操作
+        </AButton>
+      </View>
+      <View className="lister">
+        <View className="desc">size="mini"</View>
+        <AButton className="btn" size="mini">
+          小按钮
+        </AButton>
+      </View>
+      <View className="lister">
+        <View className="desc">size="mini",type="warn"</View>
+        <AButton className="btn" type="warn" size="mini">
+          小按钮+警告
+        </AButton>
+      </View>
+      <View className="lister">
+        <View className="desc">size="mini",type="secondary"</View>
+        <AButton className="btn" type="secondary" size="mini">
+          小按钮+次要
+        </AButton>
+      </View>
+
+      <View className="lister">
+        <View className="desc pad">自定义颜色，bgColor="red", color="pink", loadingColor="blue",由于伪类无法动态，所以 :active颜色是固定css变量var(--ad-active-bg-color)</View>
+        <AButton className="btn" bgColor="red" color="black" loadingColor="blue" loading={true}>
+          自定义颜色
+        </AButton>
+      </View>
+
+      <ThemeControl />
+    </View>
+  );
 }
+
+Index.config = {
+  navigateBarTitleText: "按钮"
+};

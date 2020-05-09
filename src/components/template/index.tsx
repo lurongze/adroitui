@@ -1,24 +1,28 @@
-import Taro from '@tarojs/taro';
+import Taro, { useState } from '@tarojs/taro';
 import { View, Text } from '@tarojs/components';
 import './index.scss';
 
 interface propsType{
   loading?: boolean,
-  children?: any,
+  disabled?: boolean,
+  checked: boolean,
   type?: string,
   size?: string,
   onClick?: Function
 }
 
 export default (props: propsType) => {
-  const {loading, children,type='',size='', onClick} = props;
+  const {loading, disabled = false, onClick} = props;
+  const [ checkedClass, setCheckedClass ] = useState<string>('');
   const handleClick = ()=> {
-    onClick && onClick();
+    if(!disabled){
+      onClick && onClick();
+    }
   }
   return (
-    <View onClick={()=>handleClick()} className={`ad-button ${loading?'loading':''} ${type} ${size}`}>
-      {loading && (<Text className='ad-loading'></Text>)}
-      {children}
+    <View onClick={()=>handleClick()} className={`ad-switch ${checkedClass}`}>
+      <View className='left'>丨</View>
+      <View className='right'>○</View>
     </View>
   )
 }

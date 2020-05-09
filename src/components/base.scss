@@ -1,32 +1,57 @@
-$main-color: #07c160;
-$deep-main-color: #06ae56;
-$disabled-font-color: rgba(0, 0, 0, 0.2);
-$active-bg-color: #e6e6e6;
-$warn-color: #fa5151;
-$link-color: #576b95;
-$font-color-black: #000000; // 主内容 Black 黑色，标题等
-$font-color-desc: #353535; // 大段的说明内容而且属于主要内容用 Semi 黑
-$font-color-grey: #888888; // 次要内容 Grey 灰色
-$font-color-light-grey: #b2b2b2; // 时间戳与表单缺省值 Light 灰色
-// $text-blue: #10aeff;
-$border-color: #F2F6FC;
+page{
+    --ad-main-color: #07c160;
+    --ad-deep-main-color: #06ae56;
+    --ad-disabled-font-color: rgba(0, 0, 0, 0.2);
+    --ad-active-bg-color: #e6e6e6;
+    --ad-warn-color: #fa5151;
+    --ad-link-color: #576b95;
+    --ad-font-color-black: #000000; // 主内容 Black 黑色，标题等
+    --ad-font-color-desc: #353535; // 大段的说明内容而且属于主要内容用 Semi 黑
+    --ad-font-color-grey: #888888; // 次要内容 Grey 灰色
+    --ad-font-color-light-grey: #b2b2b2; // 时间戳与表单缺省值 Light 灰色
+    // --ad-text-blue: #10aeff;
+    --ad-border-color: #F2F6FC;
+    --ad-grey-bg-color:#f2f2f2;
 
-$light-font-size: 80px; // 只能为阿拉伯数据，时间，金钱等
-$medium-font-size: 40px; // 页面大标题， 一般用于结果，空状态等单一页面
-$regular-font-size-1: 36px; // 页面内大按钮字体，与按钮搭配使用
-$regular-font-size-2: 34px; // 页面内首要层级信息。基准的，可以是连续的。如列表标题，气泡信息
-$regular-font-size-3: 28px; // 页面内次要描述信息，服务于首要信息并与之关联，如列表摘要
-$regular-font-size-4: 26px; // 页面辅助信息，需弱化的内容，如链接、小按钮
-$regular-font-size-5: 22px; // 说明文本，如版权信息等不需要用户关注的信息
+    --ad-light-font-size: 80px; // 只能为阿拉伯数据，时间，金钱等
+    --ad-medium-font-size: 40px; // 页面大标题， 一般用于结果，空状态等单一页面
+    --ad-font-size-1: 36px; // 页面内大按钮字体，与按钮搭配使用
+    --ad-font-size-2: 34px; // 页面内首要层级信息。基准的，可以是连续的。如列表标题，气泡信息
+    --ad-font-size-3: 28px; // 页面内次要描述信息，服务于首要信息并与之关联，如列表摘要
+    --ad-font-size-4: 26px; // 页面辅助信息，需弱化的内容，如链接、小按钮
+    --ad-font-size-5: 22px; // 说明文本，如版权信息等不需要用户关注的信息
+}
 
-.ad-loading {
-    width: 40px;
-    height: 40px;
-    display: inline-block;
-    vertical-align: middle;
-    background:transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABMklEQVQ4T6WTvyuFURzGP8/MxmK2sIrp2i2Iia6BmzKZGEwyMNuJ6JZfZZDRem3KeJW/gLplQVJ6dN7ec3sv78375tQZTn2fz/fXc8Q/j37qbfcDa8AI0AN8pfcRmASegIqkz6DtANieApaAA6Ah6TUmsN0AxtP3hKSbDoDtKjAWsktyTmWzwCXwBqxKqrcBtvuAY2A6T5ypYhD4ALaADUkvSQu2t4EzSc0iM7U9BCxI2oyAC0lzRcSZahJNBBxKWi4JSDQRcCSpVhKQaCLgXNJ8SUCiiYAd4ETSQxGI7WGgmh3iALD/1xrTjYWk10BNUqvtxNRIo8B6Ny/YDvG7wJ2k0zwrzwCLwB5wG61suze18QpQl3QVW+32mYLTgrVbwDPwDtyH7KHs7Jx+AYoMMRvzDY/qhBHb7HU9AAAAAElFTkSuQmCC) no-repeat;
-    background-size: cover;
-    animation: loadingFrame 1s ease infinite;
+:root{
+    --ad-main-color: #07c160;
+    --ad-deep-main-color: #06ae56;
+    --ad-disabled-font-color: rgba(0, 0, 0, 0.2);
+    --ad-active-bg-color: #e6e6e6;
+    --ad-warn-color: #fa5151;
+    --ad-link-color: #576b95;
+    --ad-font-color-black: #000000; // 主内容 Black 黑色，标题等
+    --ad-font-color-desc: #353535; // 大段的说明内容而且属于主要内容用 Semi 黑
+    --ad-font-color-grey: #888888; // 次要内容 Grey 灰色
+    --ad-font-color-light-grey: #b2b2b2; // 时间戳与表单缺省值 Light 灰色
+    // --ad-text-blue: #10aeff;
+    --ad-border-color: #F2F6FC;
+    --ad-grey-bg-color:#f2f2f2;
+
+    --ad-light-font-size: 80px; // 只能为阿拉伯数据，时间，金钱等
+    --ad-medium-font-size: 40px; // 页面大标题， 一般用于结果，空状态等单一页面
+    --ad-font-size-1: 36px; // 页面内大按钮字体，与按钮搭配使用
+    --ad-font-size-2: 34px; // 页面内首要层级信息。基准的，可以是连续的。如列表标题，气泡信息
+    --ad-font-size-3: 28px; // 页面内次要描述信息，服务于首要信息并与之关联，如列表摘要
+    --ad-font-size-4: 26px; // 页面辅助信息，需弱化的内容，如链接、小按钮
+    --ad-font-size-5: 22px; // 说明文本，如版权信息等不需要用户关注的信息
+}
+
+
+
+.flex-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .opacity-item{
@@ -46,14 +71,4 @@ $regular-font-size-5: 22px; // 说明文本，如版权信息等不需要用户�
     left: 0;
     top: 0;
     background-color: rgba(#000, 0.5);
-}
-
-@keyframes loadingFrame{
-    from {
-        transform: rotateZ(0);
-    }
-
-    to{
-        transform: rotateZ(360deg);
-    }
 }

@@ -16,9 +16,9 @@ export default function Index() {
       title: "操作反馈",
       key: "feedback",
       list: [
-        { title: "Dialog", path: "/pages/button/button" },
-        { title: "ActionSheet", path: "/pages/button/button" },
-        { title: "HalfScreenDialog", path: "/pages/button/button" }
+        { title: "Dialog", path: "/pages/feedback/dialog" },
+        { title: "ActionSheet", path: "/pages/feedback/index" },
+        { title: "HalfScreenDialog", path: "/pages/feedback/hc-dialog" }
       ]
     }
   ];

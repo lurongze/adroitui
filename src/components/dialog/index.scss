@@ -12,38 +12,47 @@
         line-height: 3rem;
         text-align: center;
         font-weight: 700;
-        color: $font-color-black;
-        font-size: $regular-font-size-2;
+        color: var(--ad-font-color-black);
+        font-size: var(--ad-font-size-2);
     }
 
     & .content{
         flex: 1;
-        color: $font-color-desc;
-        font-size: $regular-font-size-3;
+        color: var(--ad-font-color-desc);
+        font-size: var(--ad-font-size-3);
         box-sizing: border-box;
         padding: 15px;
     }
 
     & .action{
         width: 100%;
-        border-top: 1px solid $border-color;
+        border-top: 1px solid var(--ad-border-color);
         display: flex;
         & .btn{
             flex: 1;
-            font-size: $regular-font-size-2;
+            font-size: var(--ad-font-size-2);
             font-weight: 600;
             text-align: center;
             padding: 25px 0;
-            color: $link-color;
+            color: var(--ad-link-color);
             &.cancel{
-                color: $font-color-black;
+                color: var(--ad-font-color-black);
                 box-sizing: border-box;
-                border-right: 1px solid $border-color;
+                border-right: 1px solid var(--ad-border-color);
             }
             &:active{
-                background-color: $active-bg-color;
+                background-color: var(--ad-active-bg-color);
                 border-bottom-left-radius: 18px;
+            }
+            &.tw:active{
+                background-color: var(--ad-active-bg-color);
                 border-bottom-right-radius: 18px;
+                border-bottom-left-radius: 0;
+            }
+            &.ol:active{
+                background-color: var(--ad-active-bg-color);
+                border-bottom-right-radius: 18px;
+                border-bottom-left-radius: 18px;
             }
         }
     }

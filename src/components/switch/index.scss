@@ -1,0 +1,68 @@
+@import "../base.scss";
+.ad-switch{
+    display: flex;
+    width: 100px;
+    height: 60px;
+    border-radius: 30px;
+    background-color: var(--ad-active-bg-color);
+    align-items: center;
+    justify-content: space-between;
+    font-size: var(--ad-font-size-4);
+    color: black;
+    position: relative;
+    box-sizing: border-box;
+    padding: 0 15px 0 25px;
+    transition: all .5s ease;
+    &.disabled{
+        & .circel{
+            background-color: var(--ad-grey-bg-color);
+        }
+    }
+    & .right,.left{
+        width: 20px;
+        height: 20px;
+        border-radius: 15px;
+        box-sizing: border-box;
+        border: 4px solid rgba(#909399, .5);
+    }
+    & .left{
+        width: 0;
+        border: 2px solid white;
+    }
+    & .circel{
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        background-color: white;
+        border-radius: 50%;
+        left: 5px;
+        top: 5px;
+        transition: all .2s linear;
+    }
+    &.on{
+        background-color: var(--ad-main-color);
+        & .circel{
+            left: 45px;
+        }
+    }
+    &.off{
+        background-color: var(--ad-active-bg-color);
+        & .circel{
+            left: 5px;
+        }
+    }
+
+    & .switch-loading{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background-color: rgba(white,.7);
+        display: none;
+        &.show{
+            display: inline-block;
+        }
+    }
+
+}

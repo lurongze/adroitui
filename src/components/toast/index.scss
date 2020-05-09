@@ -12,7 +12,7 @@
     & .toast{
         background-color: #4c4c4c;
         color: #ffffff;
-        font-size: $regular-font-size-3;
+        font-size: var(--ad-font-size-3);
         padding: 15px 25px;
         border-radius: 9px;
         transform: translateY(-10vh);

@@ -4,13 +4,12 @@ import TransitionSlide from '../transition/slide';
 import './index.scss';
 
 interface propsType {
-  show: boolean,
-  children?: any,
-  actions: Array<{ key: string, text: string }>,
-  title?: string,
-  cancelText?: string,
-  clickItem?: Function,
-  onHide?: Function
+  show: boolean, // 是否显示
+  actions: Array<{ key: string, text: string }>, // 按钮列表数据[{key:'key1',text:'text1'},{key:'key2',text:'text2'}]
+  title?: string, // 标题
+  cancelText?: string, // 取消按钮文字 
+  clickItem?: Function, // 点击选项的事件，会返回 key的值
+  onHide?: Function // 点击取消的事件
 }
 export default (props: propsType) => {
   const { show, title, actions=[], clickItem, onHide, cancelText = '取消' } = props;

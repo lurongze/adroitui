@@ -1,0 +1,36 @@
+@import "../base.scss";
+.ad-checkbox{
+    font-size: var(--ad-font-size-2);
+    color: var(--ad-font-color-desc);
+    display: flex;
+    align-items: center;
+    & .box{
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        box-sizing: border-box;
+        border: 4px solid var(--ad-main-color);
+        // position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all .2s ease-in;
+        margin-right: 5px;
+        .on{
+            // position: absolute;//absolute;
+            display: inline-block;
+            border-radius: 50%;
+            background-color: white;
+            width: 10px;
+            height: 10px;
+            // left: 8px;
+            // top: 8px;
+        }
+    }
+    &.checked .box{
+        background-color: var(--ad-main-color);
+    }
+    &.unchecked .box{
+        background-color: white;
+    }
+}

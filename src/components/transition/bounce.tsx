@@ -3,10 +3,10 @@ import { View, Block } from '@tarojs/components';
 import './index.scss';
 
 interface propsType{
-  show?: boolean,
-  children?: any,
-  type?: string,
-  onHide?: Function
+  show?: boolean, // 是否显示
+  children?: any, // 自定义显示内容
+  // type?: string, // 
+  onHide?: Function // 消失事件
 }
 
 export default (props: propsType) => {

@@ -15,30 +15,44 @@
             height: 100%;
             display: flex;
             align-items: center;
+            font-weight: 700;
+            color: var(--ad-font-color-black);
         }
         & .center{
             flex: 1;
             text-align: center;
             padding-top: 10px;
+            &.line{
+                display: flex;
+                justify-content: center;
+            }
+            & .bloder-line{
+                width: 20vw;
+                height: 0;
+                border: 4px solid var(--ad-font-color-light-grey);
+                border-radius: 4px;
+            }
             &.no-close{
                 text-align: left;
                 text-indent: 1rem;
             }
             & .title{
-                font-size: $regular-font-size-2;
-                color: $font-color-black;
+                font-size: var(--ad-font-size-2);
+                color: var(--ad-font-color-black);
             }
             & .desc{
-                font-size: $regular-font-size-3;
-                color: $font-color-grey;
+                font-size: var(--ad-font-size-3);
+                color: var(--ad-font-color-grey);
                 padding: 5px 0;
             }
         }
     }
 
-    & .cotent{
+    & .content{
         display: flex;
         width: 100vw;
+        box-sizing: border-box;
+        padding: 15px;
     }
     & .action-btn{
         display: flex;

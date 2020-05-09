@@ -1,4 +1,7 @@
 import Taro, { Component, Config } from '@tarojs/taro'
+import { Provider } from '@tarojs/redux'
+
+import configStore from './store'
 import Index from './pages/index'
 
 import './app.scss'
@@ -9,7 +12,11 @@ import './app.scss'
 //   require('nerv-devtools')
 // }
 
+
+const store = configStore()
 class App extends Component {
+
+  theme:string = '';
 
   componentDidMount () {}
 
@@ -30,6 +37,9 @@ class App extends Component {
     pages: [
       'pages/index/index',
       'pages/tabs/index',
+      'pages/feedback/index',
+      'pages/feedback/dialog',
+      'pages/feedback/hc-dialog',
       'pages/button/button'
     ],
     window: {
@@ -44,7 +54,8 @@ class App extends Component {
   // 请勿修改此函数
   render () {
     return (
-      <Index />
+      <Provider store={store}><Index /></Provider>
+      
     )
   }
 }

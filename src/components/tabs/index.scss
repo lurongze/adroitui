@@ -9,16 +9,16 @@
         height: 100%;
         align-items: center;
         padding: 0 30px;
-        font-size: $regular-font-size-3;
-        color: $font-color-black;
+        font-size: var(--ad-font-size-3);
+        color: var(--ad-font-color-black);
         position: relative;
         & .tab-line{
             position: absolute;
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
-            background-color: $main-color;
-            border-color: $main-color;
+            background-color: var(--ad-main-color);
+            border-color: var(--ad-main-color);
             display: block;
             height: 6px;
             width: 0;
@@ -26,7 +26,7 @@
         }
         &.active{
             font-weight: 600;
-            color: $main-color;
+            color: var(--ad-main-color);
             & .tab-line{
                 width: 100%;
             }

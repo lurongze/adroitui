@@ -3,12 +3,11 @@ import { View, Text, ScrollView } from '@tarojs/components';
 import './index.scss';
 
 interface propsType{
-  active: string,
-  children?: any,
-  autoView?: boolean, // 点击自动滚动到最前面
+  active: string, // 当前选中的key值
+  autoView?: boolean, // 是否点击自动滚动到最前面
   activeClick?: boolean, // 已是选中的了，是否还触发事件
-  tabs: Array<{title:string, key:string}>,
-  onClick?: Function
+  tabs: Array<{title:string, key:string}>, // tab数据 [{title:'国内新闻',key:'news'},{title:'体育',key:'sports'}]
+  onClick?: Function // 点击触发事件，会返回key值
 }
 
 export default (props: propsType) => {

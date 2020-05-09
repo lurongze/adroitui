@@ -4,12 +4,12 @@ import './index.scss';
 
 interface propsType{
   close?: boolean, // 点击关闭
-  show?: boolean,
-  during?:number,
-  autoClose?: boolean,
-  type?: string,
-  title?: string,
-  onHide?: Function
+  show?: boolean, //  是否显示
+  during?:number, // 时间
+  autoClose?: boolean, //  自动关闭，默认true
+  type?: string, // 类型：'',warn, success
+  title?: string, // 标题
+  onHide?: Function // 消失事件
 }
 
 export default (props: propsType) => {

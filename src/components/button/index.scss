@@ -1,6 +1,7 @@
 @import "../base.scss";
 .ad-button {
-    background-color: $main-color;
+    // background-color: var(--ad-main-color);
+    background-color: var(--ad-main-color);
     position: relative;
     display: flex;
     align-items: center;
@@ -11,38 +12,41 @@
     padding: 16px 48px;
     box-sizing: border-box;
     font-weight: 700;
-    font-size: $regular-font-size-2;
+    font-size: var(--ad-font-size-2);
     // text-align: center;
     text-decoration: none;
     color: #fff;
     border-radius: 8px;
     overflow: hidden;
     &.mini {
-        display: inline-block;
+        display: inline-flex;
         width: auto;
         padding: 0 0.75em;
         line-height: 2;
-        font-size: $regular-font-size-2;
+        font-size: var(--ad-font-size-2);
     }
     &:active {
-        background-color: $deep-main-color;
+        background-color: var(--ad-deep-main-color);
     }
     &.loading {
-        background-color: $deep-main-color;
+        background-color: var(--ad-deep-main-color);
     }
     &.warn,
     &.secondary {
-        color: $warn-color;
+        color: var(--ad-warn-color);
         background-color: #fff;
         &:active {
-            background-color: $active-bg-color;
+            background-color: var(--ad-active-bg-color);
         }
     }
     &.warn.loading {
-        background-color: $active-bg-color;
+        background-color: var(--ad-active-bg-color);
     }
     &.secondary {
-        color: $main-color;
-        background-color: #f2f2f2;
+        color: var(--ad-main-color);
+        background-color: var(--ad-grey-bg-color);
+    }
+    &.cus:active{
+        background-color: var(--ad-active-bg-color);
     }
 }
