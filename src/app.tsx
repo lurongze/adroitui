@@ -40,12 +40,15 @@ class App extends Component {
       'pages/feedback/index',
       'pages/feedback/dialog',
       'pages/feedback/hc-dialog',
+      'pages/feedback/actionsheet',
+      'pages/feedback/tttips',
+      'pages/feedback/spin',
       'pages/button/button'
     ],
     window: {
       backgroundTextStyle: 'light',
       navigationBarBackgroundColor: '#fff',
-      navigationBarTitleText: 'WeChat',
+      navigationBarTitleText: 'Adroit UI',
       navigationBarTextStyle: 'black'
     }
   }

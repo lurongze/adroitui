@@ -16,13 +16,16 @@
         border-top: 1px solid var(--ad-border-color);
         &.title{
             border-top: none;
+            box-sizing: border-box;
+            padding: 15px;
+            text-align: center;
             font-size: var(--ad-font-size-4);
             color: var(--ad-font-color-grey);
         }
         &.cancel{
             border-top: 15px solid var(--ad-border-color);
         }
-        &.action:active{
+        &.action:active,cancel:active{
             background-color: var(--ad-active-bg-color);
         }
     }

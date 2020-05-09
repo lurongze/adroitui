@@ -16,7 +16,7 @@
         animation: tooltipFrame ease-in-out forwards;
     }
     &.tipsAnimate1{
-        animation: tooltipFrame1 ease-in-out forwards;
+        animation: tooltipFrame1 ease-out forwards;
     }
     &.warn{
         background-color: var(--ad-warn-color);

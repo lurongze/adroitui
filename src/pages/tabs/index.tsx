@@ -4,7 +4,6 @@ import { useSelector } from "@tarojs/redux";
 import ThemeControl from "../themeControl";
 import { AdTabs } from "../../index";
 
-import "./index.scss";
 
 export default function Index() {
   const tabList = [
@@ -27,13 +26,9 @@ export default function Index() {
 
   return (
     <View className={tStore.theme}>
+      
       <View className="lister">
-        <View className="desc">
-          <View>tabs:</View>
-        </View>
-      </View>
-      <View className="lister">
-        <View className="desc">点击自动滑动tab，选中的key值：{activeTab}</View>
+        <View className="desc pad">点击自动滑动tab，选中的key值：{activeTab}</View>
         <AdTabs
           active={activeTab}
           onClick={(e: string) => tabActive(e)}
@@ -43,7 +38,7 @@ export default function Index() {
       </View>
 
       <View className="lister">
-        <View className="desc">点击不滑动tab，选中的key值：{activeTab}</View>
+        <View className="desc pad">点击不滑动tab，选中的key值：{activeTab}</View>
         <AdTabs
           active={activeTab}
           onClick={(e: string) => tabActive(e)}
@@ -52,7 +47,7 @@ export default function Index() {
       </View>
 
       <View className="lister">
-        <View className="desc">点击当前选中时，仍然触发事件</View>
+        <View className="desc pad">点击当前选中时，仍然触发事件</View>
         <AdTabs
           active={activeTab}
           onClick={(e: string) => tabActive(e)}
@@ -67,5 +62,5 @@ export default function Index() {
 }
 
 Index.config = {
-  navigateBarTitleText: "Tab标签"
+  navigationBarTitleText: "Tab标签"
 };

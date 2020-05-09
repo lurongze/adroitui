@@ -9,6 +9,10 @@
         display: flex;
         animation: toastFrame ease-in-out forwards;
     }
+    &.toastAnimateIn{
+        display: flex;
+        animation: toastFrame1 ease-in-out forwards;
+    }
     & .toast{
         background-color: #4c4c4c;
         color: #ffffff;
@@ -35,6 +39,20 @@
 
     100% {
         opacity: 0;
+    }
+}
+
+@keyframes toastFrame1 {
+    0% {
+        opacity: 0;
+    }
+
+    30% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
     }
 }
 

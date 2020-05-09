@@ -1,5 +1,5 @@
 import Taro from "@tarojs/taro";
-import { View } from "@tarojs/components";
+import { View, ScrollView } from "@tarojs/components";
 import TransitionSlide from "../transition/slide";
 import AdButton from "../button/index";
 import "./index.scss";
@@ -13,6 +13,7 @@ interface propsType {
   children?: any, // 自定义内容
   title?: string, // 标题
   desc?: string, // 副标题描述
+  maxHeight?: string, // 最高的数值，超过则内容滚动
   mainBtnTxt?: string, // 默认主按钮文字
   secondaryBtnTxt?: string, // 默认副按钮文字
   onClickItem?: Function, // 点击按钮的事件，返回值：主按钮main, 副按钮 secondary， 头部右边更多按钮more
@@ -21,6 +22,7 @@ interface propsType {
 export default (props: propsType) => {
   const {
     noHeader = false,
+    maxHeight = '',
     show,
     title = "标题",
     showClose = true,
@@ -40,6 +42,12 @@ export default (props: propsType) => {
   const handleHide = () => {
     onHide && onHide();
   };
+  let styObj = {};
+  if(maxHeight!==''){
+    styObj = Object.assign(styObj,{
+      maxHeight
+    })
+  }
   return (
     <TransitionSlide show={show} onHide={() => handleHide()}>
       <View className="container">
@@ -68,7 +76,7 @@ export default (props: propsType) => {
           </View>
         )}
 
-        <View className="content">{props.children}</View>
+        <ScrollView scrollY enableFlex style={styObj} className="content">{props.children}</ScrollView>
         {showBtns && (
           <View className="action-btn">
             <AdButton

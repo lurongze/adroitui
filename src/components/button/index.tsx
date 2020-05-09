@@ -39,7 +39,7 @@ export default (props: propsType) => {
     })
   }
   return (
-    <View style={styleObj} onClick={()=>handleClick()} className={`ad-button ${loading?'loading':''} ${type} ${size} ${className} ${bgColor?'cus':''}`}>
+    <View style={styleObj} onClick={()=>handleClick()} className={`ad-button ${loading?'loading':''} ${type} ${size} ${className}`}>
       {loading && <AdLoading color={loadingColor} />}
       {children}
     </View>

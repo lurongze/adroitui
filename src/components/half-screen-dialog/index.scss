@@ -52,7 +52,9 @@
         display: flex;
         width: 100vw;
         box-sizing: border-box;
+        flex-wrap: wrap;
         padding: 15px;
+        max-height: 50vh;
     }
     & .action-btn{
         display: flex;

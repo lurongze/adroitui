@@ -1,78 +1,47 @@
 import Taro, { useState } from "@tarojs/taro";
-import { View, Block } from "@tarojs/components";
+import { View, Block, Text } from "@tarojs/components";
+import ThemeControl from "../themeControl";
+import { useSelector } from "@tarojs/redux";
 import {
-  AdDialog,
   AdHCDialog,
-  AdToast,
-  AdTooltips,
-  AdSpin,
   AdButton
 } from "../../index";
-import "./index.scss";
 
 export default function Index() {
-  const [dialog, setDialog] = useState<boolean>(false);
-  const [hcDialog, setHcDialog] = useState<boolean>(false);
-  const [toast, setToast] = useState<boolean>(false);
-  const [tooltips, setTooltips] = useState<boolean>(false);
-  const [theme, setTheme] = useState<string>("");
-  const toogleTheme = () => {
-    setTheme(theme ? "" : "adpage");
-  };
+  const themeStore = useSelector(s => s.theme);
+  const [show, setShow] = useState<boolean>(false);
 
+
+  const clickItem = (e: string) => {
+    Taro.showToast({ title: `你点击了key:${e}`, icon: "none" });
+  }
   return (
-    <View className={theme}>
-      <View className="lister">
-        <View className="desc">点击可以切换主题，支持自定义颜色主题</View>
-        <AdButton onClick={() => toogleTheme()}>切换主题{theme}</AdButton>
-      </View>
-
-      <AdSpin loading={theme.length>0} title='Loading...'>
-        <View className="lister">
-          <View className="desc">普通Dialog</View>
-          <AdButton onClick={() => setDialog(true)}>Dialog</AdButton>
-        </View>
-
-        <View className="lister">
-          <View className="desc">普通半屏Dialog</View>
-          <AdButton onClick={() => setHcDialog(true)}>AdHCDialog</AdButton>
-        </View>
-      </AdSpin>
+    <View className={`page-padding ${themeStore.theme}`}>
 
       <View className="lister">
-        <View className="desc">Toast</View>
-        <AdButton onClick={() => setToast(true)}>Toast</AdButton>
+        <Text className="desc pad">
+          onClickItem="function"\n 返回key：'main主按钮'|'secondary次按钮'|'more右上角更多图标'\n
+          onHide="function"
+        </Text>
+        <AdButton onClick={() => setShow(true)}>普通使用</AdButton>
       </View>
 
-      <View className="lister">
-        <View className="desc">Tooltips</View>
-        <AdButton onClick={() => setTooltips(true)}>Tooltips</AdButton>
-      </View>
 
       <Block>
-        <AdDialog show={dialog} onHide={() => setDialog(false)} />
         <AdHCDialog
-          show={hcDialog}
-          onHide={() => setHcDialog(false)}
-          noHeader={true}
+          show={show}
+          onHide={() => setShow(false)}
+          onClickItem={(e: string) => clickItem(e)}
         >
-          我是半屏组件里面的自定义内容
+          我是半屏组件里面的内容
         </AdHCDialog>
-        <AdToast
-          show={toast}
-          onHide={() => setToast(false)}
-          title="这是一个toast"
-        />
-        <AdTooltips
-          show={tooltips}
-          onHide={() => setTooltips(false)}
-          title="你打开了tooltips"
-        />
+
+        <ThemeControl />
       </Block>
     </View>
   );
 }
 
 Index.config = {
-  navigateBarTitleText: "Tab标签"
+  navigationBarTitleText: "半屏组件"
 };

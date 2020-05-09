@@ -1,5 +1,5 @@
 import Taro, { useState } from "@tarojs/taro";
-import { View } from "@tarojs/components";
+import { View, Text } from "@tarojs/components";
 import { useSelector } from '@tarojs/redux';
 import ThemeControl from '../themeControl';
 import AButton from "../../components/button/index";
@@ -16,7 +16,7 @@ export default function Index() {
   return (
     <View className={`page-padding ${themeStore.theme}`}>
       <View className="lister">
-        <View className="desc">普通按钮，点击切换loading</View>
+        <Text className="desc">普通按钮\n点击切换loading</Text>
         <AButton
           className="btn"
           loading={loading}
@@ -26,7 +26,7 @@ export default function Index() {
         </AButton>
       </View>
       <View className="lister">
-        <View className="desc">普通按钮，loading状态</View>
+        <Text className="desc">普通按钮\nloading状态</Text>
         <AButton className="btn" loading={true}>
           页面主操作
         </AButton>
@@ -38,38 +38,38 @@ export default function Index() {
         </AButton>
       </View>
       <View className="lister">
-        <View className="desc">type="warn",loading=true</View>
+        <Text className="desc">type="warn"\nloading=true</Text>
         <AButton className="btn" type="warn" loading={true}>
           页面主操作
         </AButton>
       </View>
       <View className="lister">
-        <View className="desc">type="secondary"</View>
+        <Text className="desc">type="secondary"</Text>
         <AButton className="btn" type="secondary">
           页面次要操作
         </AButton>
       </View>
       <View className="lister">
-        <View className="desc">size="mini"</View>
+        <Text className="desc">size="mini"</Text>
         <AButton className="btn" size="mini">
           小按钮
         </AButton>
       </View>
       <View className="lister">
-        <View className="desc">size="mini",type="warn"</View>
+        <Text className="desc">size="mini"\ntype="warn"</Text>
         <AButton className="btn" type="warn" size="mini">
           小按钮+警告
         </AButton>
       </View>
       <View className="lister">
-        <View className="desc">size="mini",type="secondary"</View>
+        <Text className="desc">size="mini"\ntype="secondary"</Text>
         <AButton className="btn" type="secondary" size="mini">
           小按钮+次要
         </AButton>
       </View>
 
       <View className="lister">
-        <View className="desc pad">自定义颜色，bgColor="red", color="pink", loadingColor="blue",由于伪类无法动态，所以 :active颜色是固定css变量var(--ad-active-bg-color)</View>
+        <Text className="desc pad">自定义颜色\nbgColor="red"\ncolor="pink"\nloadingColor="blue"\n自定义背景色无法动态定义:active的颜色，如果需要的话，建议是给按钮加class修改样式</Text>
         <AButton className="btn" bgColor="red" color="black" loadingColor="blue" loading={true}>
           自定义颜色
         </AButton>
@@ -81,5 +81,5 @@ export default function Index() {
 }
 
 Index.config = {
-  navigateBarTitleText: "按钮"
+  navigationBarTitleText: "按钮"
 };

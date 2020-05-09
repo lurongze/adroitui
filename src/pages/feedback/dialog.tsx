@@ -1,9 +1,8 @@
 import Taro, { useState } from "@tarojs/taro";
-import { View, Block } from "@tarojs/components";
+import { View, Block, Text } from "@tarojs/components";
 import ThemeControl from "../themeControl";
 import { useSelector } from "@tarojs/redux";
 import { AdDialog, AdButton } from "../../index";
-import "./index.scss";
 
 export default function Index() {
   const themeStore = useSelector(s => s.theme);
@@ -25,32 +24,34 @@ export default function Index() {
   return (
     <View className={`page-padding ${themeStore.theme}`}>
       <View className="lister">
-        <View className="desc pad">
-          show="boolean", onHide="function", onConfirm="function",onCancel="function"
+        <Text className="desc pad">
+          show="boolean"\n onHide="function"\n onConfirm="function"\n onCancel="function"\n
           内容是props.children
-        </View>
+        </Text>
         <AdButton onClick={() => setDialog(true)}>普通使用</AdButton>
       </View>
 
       <View className="lister">
-        <View className="desc">
-          showClose="false" textAlign="center"
+        <Text className="desc">
+          showClose="false"\n textAlign="center"
           内容居中
-        </View>
+        </Text>
         <AdButton onClick={() => setDialog1(true)}>不显示取消按钮</AdButton>
       </View>
 
       <View className="lister">
-        <View className="desc pad">
-          title="自定义标题", cancelText="忽略",confirmText="提交"
-        </View>
+        <Text className="desc pad">
+          title="自定义标题"\n cancelText="忽略"\n confirmText="提交"
+        </Text>
         <AdButton onClick={() => setDialog2(true)}>自定义文字</AdButton>
       </View>
 
       <View className="lister">
-        <View className="desc">
-          自定义内容，JSX内容
-        </View>
+        <Text className="desc">
+          自定义内容，JSX内容\n
+          超长内容回有滚动条，默认最高高度为70vh\n
+          maxHeight='50vh'\n
+        </Text>
         <AdButton onClick={() => setDialog3(true)}>自定义内容</AdButton>
       </View>
 
@@ -83,9 +84,15 @@ export default function Index() {
         <AdDialog
           show={dialog3}
           onHide={() => setDialog3(false)}
+          maxHeight='50vh'
         >
           <View>
-          <View>感谢你支持Adroit UI</View>
+          <AdButton>JSX按钮</AdButton>
+          {
+            Array.from(new Array(100).keys()).map(item=>{
+            return (<View key={item}>感谢你支持Adroit UI{item}</View>)
+            })
+          }
           <AdButton>JSX按钮</AdButton>
           </View>
         </AdDialog>
@@ -96,5 +103,5 @@ export default function Index() {
 }
 
 Index.config = {
-  navigateBarTitleText: "Dialog弹框"
+  navigationBarTitleText: "Dialog弹框"
 };

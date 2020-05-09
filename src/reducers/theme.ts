@@ -1,7 +1,7 @@
 import { DEFAULT_THEME, CUSTOM_THEME } from '../constants/theme';
 
 const INITIAL_STATE = {
-  theme: ''
+  theme: 'adpage'
 }
 
 export default function theme (state = INITIAL_STATE, action) {
