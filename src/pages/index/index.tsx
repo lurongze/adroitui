@@ -3,20 +3,37 @@ import { View, Text } from "@tarojs/components";
 import ThemeControl from "../themeControl";
 import { useSelector } from "@tarojs/redux";
 import "./index.scss";
-
 export default function Index() {
   const list = [
     {
+      title: "基础",
+      key: "base",
+      desc: "主题等",
+      list: [
+        { title: "自定义主题色", path: "/pages/base/theme" },
+        { title: "Badge徽章", path: "" },
+        { title: "List列表", path: "" },
+        { title: "Card卡片", path: "" },
+        { title: "Loading加载", path: "" },
+        { title: "Footer页脚", path: "" },
+        { title: "CSS箭头", path: "" },
+        { title: "悬浮按钮", path: "" },
+        { title: "图片选择", path: "" },
+      ]
+    },
+    {
       title: "表单",
       key: "form",
+      desc: "表单内容，按钮，单选，多选",
       list: [
-        { title: "按钮", path: "/pages/button/button" },
-        { title: "Tab标签", path: "/pages/tabs/index" }
+        { title: "按钮", path: "/pages/form/button" },
+
       ]
     },
     {
       title: "操作反馈",
       key: "feedback",
+      desc: "模态框、加载、提示等",
       list: [
         { title: "Dialog弹框", path: "/pages/feedback/dialog" },
         { title: "ActionSheet弹框", path: "/pages/feedback/actionsheet" },
@@ -24,10 +41,36 @@ export default function Index() {
         { title: "Toast+Tooltips提示", path: "/pages/feedback/tttips" },
         { title: "Spin加载", path: "/pages/feedback/spin" }
       ]
-    }
+    },
+    {
+      title: "导航",
+      key: "nav",
+      desc: "Tab等",
+      list: [
+        { title: "Tab标签", path: "/pages/nav/tabs" }
+      ]
+    },
+    {
+      title: "扩展",
+      key: "extend",
+      desc: "各种扩展",
+      list: [
+        { title: "数字键盘", path: "" },
+        { title: "登录页面", path: "" },
+        { title: "Drawer抽屉", path: "" },
+        { title: "城市选择", path: "" },
+        { title: "日期组件", path: "" },
+        { title: "时间轴", path: "" },
+        { title: "滚动消息", path: "" },
+        { title: "弹层选择", path: "" },
+        { title: "分割线", path: "" },
+        { title: "轮播", path: "" },
+        { title: "表单", path: "" },
+      ]
+    },
   ];
   const themeStore = useSelector(s => s.theme);
-  const [openKey, setOpenKey] = useState("base");
+  const [openKey, setOpenKey] = useState("");
   const toogleOpen = (tapKey: string) => {
     if (tapKey === openKey) {
       setOpenKey('');
@@ -36,10 +79,14 @@ export default function Index() {
     }
   }
 
-  const toPage = (pagePath: string){
-    Taro.navigateTo({
-      url: pagePath
-    });
+  const toPage = (pagePath: string) => {
+    if (pagePath) {
+      Taro.navigateTo({
+        url: pagePath
+      });
+    } else {
+      Taro.showToast({ title: '功能开发中...', icon: 'none' });
+    }
   }
 
   return (
@@ -54,8 +101,13 @@ export default function Index() {
         return (
           <View className="module-list" key={item.title}>
             <View className={`header ${item.key === openKey ? 'open' : ''}`} onClick={() => toogleOpen(item.key)}>
-              <Text>{item.title}</Text>
-              <View className={`arrow ${item.key === openKey ? 'down' : 'right'}`} />
+              <View className='info'>
+                <Text className='list-title'>{item.title}</Text>
+                <Text className='list-desc'>{item.desc}</Text>
+              </View>
+              <View className={`arrow-circle ${item.key === openKey ? 'down' : 'right'}`}>
+                <View className={`arrow`} />
+              </View>
             </View>
             <View
               className={`components ${item.key === openKey ? 'open' + item.list.length : ''}`}
@@ -64,7 +116,9 @@ export default function Index() {
                 return (
                   <View className="component-list" key={sitem.title} onClick={() => toPage(sitem.path)}>
                     <Text>{sitem.title}</Text>
-                    <View className='arrow right' />
+                    <View className='arrow-circle right'>
+                      <View className='arrow' />
+                    </View>
                   </View>
                 );
               })}

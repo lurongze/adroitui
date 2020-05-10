@@ -4,8 +4,6 @@ import { useSelector } from '@tarojs/redux';
 import ThemeControl from '../themeControl';
 import AButton from "../../components/button/index";
 
-import "./button.scss";
-
 export default function Index() {
 
   const themeStore = useSelector(s=>s.theme);

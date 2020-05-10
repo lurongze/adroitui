@@ -1,5 +1,5 @@
 import Taro, { useState } from "@tarojs/taro";
-import { View, Block, Text } from "@tarojs/components";
+import { View, Text } from "@tarojs/components";
 import ThemeControl from "../themeControl";
 import { useSelector } from "@tarojs/redux";
 import {

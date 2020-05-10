@@ -1,5 +1,5 @@
 // @import '../node_modules/animate.css/animate.css';
-page{
+page {
     --ad-main-color: #07c160;
     --ad-deep-main-color: #06ae56;
     --ad-disabled-font-color: rgba(0, 0, 0, 0.2);
@@ -11,8 +11,8 @@ page{
     --ad-font-color-grey: #888888; // 次要内容 Grey 灰色
     --ad-font-color-light-grey: #b2b2b2; // 时间戳与表单缺省值 Light 灰色
     // --ad-text-blue: #10aeff;
-    --ad-border-color: #F2F6FC;
-    --ad-grey-bg-color:#f2f2f2;
+    --ad-border-color: #f2f6fc;
+    --ad-grey-bg-color: #f2f2f2;
 
     --ad-light-font-size: 80px; // 只能为阿拉伯数据，时间，金钱等
     --ad-medium-font-size: 40px; // 页面大标题， 一般用于结果，空状态等单一页面
@@ -46,7 +46,7 @@ page{
 //     --ad-font-size-4: 26px; // 页面辅助信息，需弱化的内容，如链接、小按钮
 //     --ad-font-size-5: 22px; // 说明文本，如版权信息等不需要用户关注的信息
 // }
-page .adpage{
+page .adpage {
     // background-color: #ededed;
     --ad-main-color: #1890ff;
     --ad-deep-main-color: #096dd9;
@@ -59,8 +59,8 @@ page .adpage{
     --ad-font-color-grey: #888888; // 次要内容 Grey 灰色
     --ad-font-color-light-grey: #b2b2b2; // 时间戳与表单缺省值 Light 灰色
     // --ad-text-blue: #10aeff;
-    --ad-border-color: #F2F6FC;
-    --ad-grey-bg-color:#f2f2f2;
+    --ad-border-color: #f2f6fc;
+    --ad-grey-bg-color: #f2f2f2;
 
     --ad-light-font-size: 80px; // 只能为阿拉伯数据，时间，金钱等
     --ad-medium-font-size: 40px; // 页面大标题， 一般用于结果，空状态等单一页面
@@ -94,16 +94,16 @@ page .adpage{
 //     --ad-font-size-4: 26px; // 页面辅助信息，需弱化的内容，如链接、小按钮
 //     --ad-font-size-5: 22px; // 说明文本，如版权信息等不需要用户关注的信息
 // }
-.adpage{
+.adpage {
     min-height: 100vh;
 }
-.lister{
+.lister {
     display: flex;
     width: 100vw;
     margin-top: 40px;
     justify-content: center;
     flex-wrap: wrap;
-    & .desc{
+    & .desc {
         width: 100vw;
         padding: 20px 0;
         color: var(--ad-font-color-desc);
@@ -113,16 +113,16 @@ page .adpage{
         display: inline-block;
         // background-color: var(--ad-grey-bg-color);
         margin: 30px 0;
-        &.pad{
+        &.pad {
             padding: 20px 20vw;
         }
     }
 }
-.page-padding{
+.page-padding {
     padding: 20px 0 150px 0;
 }
 
-.flat-btn{
+.flat-btn {
     position: fixed;
     width: 80px;
     height: 80px;
@@ -136,28 +136,38 @@ page .adpage{
     display: flex;
     flex-wrap: wrap;
     align-content: center;
-    & .txt{
+    & .txt {
         width: 80px;
         text-align: center;
     }
-    &:active{
+    &:active {
         background-color: var(--ad-deep-main-color);
     }
 }
 
-.arrow{
-    width: 20px;
-    height: 20px;
-    border-top: 5px solid var(--ad-main-color);
-    border-right: 5px solid var(--ad-main-color);
-    transition: all .5s ease;
-    &.right{
+.arrow-circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--ad-main-color);
+    .arrow {
+        width: 10px;
+        height: 10px;
+        border-top: 5px solid #ffffff; // var(--ad-main-color);
+        border-right: 5px solid #ffffff; // var(--ad-main-color);
+        transform: translateX(-2px);
+    }
+    transition: all 0.5s ease;
+    &.right {
         transform: rotateZ(45deg);
     }
-    &.up{
+    &.up {
         transform: rotateZ(-45deg);
     }
-    &.down{
+    &.down {
         transform: rotateZ(135deg);
     }
 }

@@ -36,14 +36,15 @@ class App extends Component {
   config: Config = {
     pages: [
       'pages/index/index',
-      'pages/tabs/index',
+      'pages/base/theme',
+      'pages/nav/tabs',
       'pages/feedback/index',
       'pages/feedback/dialog',
       'pages/feedback/hc-dialog',
       'pages/feedback/actionsheet',
       'pages/feedback/tttips',
       'pages/feedback/spin',
-      'pages/button/button'
+      'pages/form/button'
     ],
     window: {
       backgroundTextStyle: 'light',

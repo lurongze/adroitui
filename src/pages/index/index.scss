@@ -6,6 +6,7 @@
   justify-content: center;
   min-height: 100vh;
   align-content: flex-start;
+  padding-bottom: 100px;
   & .title {
     width: 100vw;
     font-size: 40px;
@@ -40,6 +41,18 @@
       &.open{
           color: #888888;
       }
+      & .info{
+        flex: 1;
+        display: flex;
+        flex-wrap: wrap;
+        & .list-title,.list-desc{
+          width: 100%;
+        }
+        & .list-desc{
+          font-size: var(--ad-font-size-4);
+          color: var(--ad-font-color-grey);
+        }
+      }
     }
     & .components {
         display: block;
@@ -57,6 +70,7 @@
         border-bottom: 1px solid #F2F6FC;
         justify-content: space-between;
         background-color: #ffffff;
+        word-break: break-all;
         &:active{
             background-color: #e6e6e6;
         }
@@ -75,24 +89,39 @@
       }
       &.open4{
         height: 480px;
+        transition: height 1s;
       }
       &.open5{
         height: 600px;
+        transition: height 1s;
       }
       &.open6{
         height: 720px;
+        transition: height 1s;
       }
       &.open7{
         height: 840px;
+        transition: height 1s;
       }
       &.open8{
         height: 960px;
+        transition: height 1s;
       }
       &.open9{
         height: 1080px;
+        transition: height 1.5s;
       }
       &.open10{
         height: 1200px;
+        transition: height 1.5s;
+      }
+      &.open11{
+        height: 1320px;
+        transition: height 1.5s;
+      }
+      &.open12{
+        height: 1440px;
+        transition: height 1.5s;
       }
 
     }
