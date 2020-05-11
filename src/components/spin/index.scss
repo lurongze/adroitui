@@ -41,20 +41,20 @@
             align-content: space-between;
             justify-content: space-between;
             animation: loadingFrame 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-            & .s{
+            & .dot{
                 width: 20px;
                 height: 20px;
                 border-radius: 50%;
                 box-sizing: border-box;
                 background-color: var(--ad-main-color);
             }
-            & .s:nth-child(2){
+            & .dot:nth-child(2){
                 opacity: .8;
             }
-            & .s:nth-child(3){
+            & .dot:nth-child(3){
                 opacity: .4;
             }
-            & .s:nth-child(4){
+            & .dot:nth-child(4){
                 opacity: .6;
             }
         }

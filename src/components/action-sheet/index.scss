@@ -13,11 +13,11 @@
         font-size: var(--ad-font-size-2);
         color: var(--ad-font-color-black);
         justify-content: center;
-        border-top: 1px solid var(--ad-border-color);
+        border-bottom: 1px solid var(--ad-border-color);
         &.title{
             border-top: none;
             box-sizing: border-box;
-            padding: 15px;
+            padding: 25px;
             text-align: center;
             font-size: var(--ad-font-size-4);
             color: var(--ad-font-color-grey);
@@ -25,9 +25,17 @@
         &.cancel{
             border-top: 15px solid var(--ad-border-color);
         }
-        &.action:active,cancel:active{
+        &.action:active{
             background-color: var(--ad-active-bg-color);
         }
+        &.cancel:active{
+            background-color: var(--ad-active-bg-color);
+        }
+        
+        
     }
-    
+    &.no-title .ac0{
+        border-top-left-radius: 18px;
+        border-top-right-radius: 18px;
+    }
 }

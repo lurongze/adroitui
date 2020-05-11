@@ -1,47 +1,68 @@
 import Taro, { useState } from "@tarojs/taro";
-import { View, Block, Text } from "@tarojs/components";
+import { View, Text } from "@tarojs/components";
 import ThemeControl from "../themeControl";
-import { useSelector } from "@tarojs/redux";
-import {
-  AdHCDialog,
-  AdButton
-} from "../../index";
+import { AdSpin, AdButton } from "../../index";
 
 export default function Index() {
-  const themeStore = useSelector(s => s.theme);
+  const [theme, setTheme] = useState(() => {
+    return Taro.getStorageSync("theme") || "";
+  });
   const [show, setShow] = useState<boolean>(false);
+  const [show1, setShow1] = useState<boolean>(false);
+  const [show2, setShow2] = useState<boolean>(false);
 
-
-  const clickItem = (e: string) => {
-    Taro.showToast({ title: `你点击了key:${e}`, icon: "none" });
-  }
   return (
-    <View className={`page-padding ${themeStore.theme}`}>
-
+    <View className={`page-padding ${theme}`}>
       <View className="lister">
-        <Text className="desc pad">
-          onClickItem="function"\n 返回key：'main主按钮'|'secondary次按钮'|'more右上角更多图标'\n
-          onHide="function"
-        </Text>
+        <View className="header">
+          <Text>Spin</Text>
+          <View className="left-line"></View>
+        </View>
+        <View className="show-area">
         <AdButton onClick={() => setShow(true)}>普通使用</AdButton>
+        </View>
       </View>
 
+      <View className="lister">
+        <View className="header">
+          <Text>点击Spin关闭</Text>
+          <View className="left-line"></View>
+        </View>
+        <View className="show-area">
+          <AdSpin
+            loading={show1}
+            onClick={() => setShow1(false)}
+            title="Loading..."
+          >
+            <View className="desc pad">
+              我是被Spin组件包围的内容啦,我是被Spin组件包围的内容啦,我是被Spin组件包围的内容啦
+            </View>
+          </AdSpin>
+          <AdButton onClick={() => setShow1(true)}>激活spin</AdButton>
+        </View>
+      </View>
 
-      <Block>
-        <AdHCDialog
-          show={show}
-          onHide={() => setShow(false)}
-          onClickItem={(e: string) => clickItem(e)}
-        >
-          我是半屏组件里面的内容
-        </AdHCDialog>
+      <View className="lister">
+        <View className="header">
+          <Text>全屏Spin</Text>
+          <View className="left-line"></View>
+        </View>
+        <View className="show-area">
+          <AdSpin
+            loading={show2}
+            onClick={() => setShow2(false)}
+            title="Loading..."
+            fullscreen={true}
+          />
+          <AdButton onClick={() => setShow2(true)}>激活spin</AdButton>
+        </View>
+      </View>
 
-        <ThemeControl />
-      </Block>
+      <ThemeControl onClick={(e: string) => setTheme(e)} />
     </View>
   );
 }
 
 Index.config = {
-  navigationBarTitleText: "半屏组件"
+  navigationBarTitleText: "Spin组件"
 };

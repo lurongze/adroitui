@@ -1,9 +1,7 @@
 import Taro, { useState } from "@tarojs/taro";
 import { View, Text } from "@tarojs/components";
-import { useSelector } from "@tarojs/redux";
 import ThemeControl from "../themeControl";
 import { AdTabs } from "../../index";
-
 
 export default function Index() {
   const tabList = [
@@ -17,7 +15,9 @@ export default function Index() {
     { title: "教育", key: "jy" },
     { title: "汽车", key: "cart" }
   ];
-  const tStore = useSelector(s => s.theme);
+  const [theme, setTheme] = useState(() => {
+    return Taro.getStorageSync("theme") || "";
+  });
   const [activeTab, setActiveTab] = useState<string>(tabList[0].key);
   const [activeTab1, setActiveTab1] = useState<string>(tabList[0].key);
   const [activeTab2, setActiveTab2] = useState<string>(tabList[0].key);
@@ -29,48 +29,67 @@ export default function Index() {
   // }
 
   return (
-    <View className={`page-padding ${tStore.theme}`}>
-      
+    <View className={`page-padding ${theme}`}>
       <View className="lister">
-        <Text className="desc pad">点击自动滑动tab，选中的key值：{activeTab}</Text>
-        <AdTabs
-          active={activeTab}
-          onClick={(e: string) => setActiveTab(e)}
-          tabs={tabList}
-          autoView={true}
-        />
+        <View className="header">
+          <Text>点击自动滑动，选中的key值：{activeTab}</Text>
+          <View className="left-line"></View>
+        </View>
+        <View className="show-area">
+          <AdTabs
+            active={activeTab}
+            onClick={(e: string) => setActiveTab(e)}
+            tabs={tabList}
+            autoView={true}
+          />
+        </View>
       </View>
 
       <View className="lister">
-        <Text className="desc pad">点击不滑动tab\n选中的key值：{activeTab1}</Text>
-        <AdTabs
-          active={activeTab1}
-          onClick={(e: string) => setActiveTab1(e)}
-          tabs={tabList}
-        />
+        <View className="header">
+          <Text>点击不滑动，选中的key值：{activeTab1}</Text>
+          <View className="left-line"></View>
+        </View>
+        <View className="show-area">
+          <AdTabs
+            active={activeTab1}
+            onClick={(e: string) => setActiveTab1(e)}
+            tabs={tabList}
+          />
+        </View>
       </View>
 
       <View className="lister">
-        <Text className="desc pad">固定宽度width='25vw'\n设置固定宽度后，左右margin,padding将清零\n选中的key值：{activeTab2}</Text>
-        <AdTabs
-          active={activeTab2}
-          width='25vw'
-          onClick={(e: string) => setActiveTab2(e)}
-          tabs={tabList}
-        />
+        <View className="header">
+          <Text>固定宽度，选中的key值：{activeTab2}</Text>
+          <View className="left-line"></View>
+        </View>
+        <View className="show-area">
+          <AdTabs
+            active={activeTab2}
+            width="25vw"
+            onClick={(e: string) => setActiveTab2(e)}
+            tabs={tabList}
+          />
+        </View>
       </View>
 
       <View className="lister">
-        <Text className="desc pad">点击当前选中时，仍然触发事件\n选中的key值：{activeTab3}</Text>
-        <AdTabs
-          active={activeTab3}
-          onClick={(e: string) => setActiveTab3(e)}
-          tabs={tabList}
-          activeClick={true}
-        />
+        <View className="header">
+          <Text>点击当前选中时，仍然触发事件，选中的key值：{activeTab3}</Text>
+          <View className="left-line"></View>
+        </View>
+        <View className="show-area">
+          <AdTabs
+            active={activeTab3}
+            onClick={(e: string) => setActiveTab3(e)}
+            tabs={tabList}
+            activeClick={true}
+          />
+        </View>
       </View>
 
-      <ThemeControl />
+      <ThemeControl onClick={(e: string) => setTheme(e)} />
     </View>
   );
 }

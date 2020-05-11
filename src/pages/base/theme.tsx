@@ -1,14 +1,13 @@
 import Taro, { useState } from "@tarojs/taro";
 import { View, Block, Text } from "@tarojs/components";
 import ThemeControl from "../themeControl";
-import { useSelector } from "@tarojs/redux";
 import {
   AdHCDialog,
   AdButton
 } from "../../index";
 
 export default function Index() {
-  const themeStore = useSelector(s => s.theme);
+  const [theme, setTheme] = useState(()=>{return Taro.getStorageSync('theme') || ''});
   const [show, setShow] = useState<boolean>(false);
 
 
@@ -16,7 +15,7 @@ export default function Index() {
     Taro.showToast({ title: `你点击了key:${e}`, icon: "none" });
   }
   return (
-    <View className={`page-padding ${themeStore.theme}`}>
+    <View className={`page-padding ${theme}`}>
 
       <View className="lister">
         <Text className="desc pad">
@@ -36,7 +35,7 @@ export default function Index() {
           我是半屏组件里面的内容
         </AdHCDialog>
 
-        <ThemeControl />
+        <ThemeControl onClick={(e:string)=>setTheme(e)} />
       </Block>
     </View>
   );

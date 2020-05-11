@@ -1,5 +1,5 @@
-import Taro, { useState, useEffect } from '@tarojs/taro';
-import { View, Text } from '@tarojs/components';
+import Taro from '@tarojs/taro';
+import { View } from '@tarojs/components';
 import './index.scss';
 
 interface propsType{
@@ -28,7 +28,7 @@ export default (props: propsType) => {
     animateClass = 'toastAnimateIn';
   }
   return (
-    <View onAnimationEnd={()=>animationEnd()} onClick={()=>handleHide()} style={{animationDuration: during+'s'}} className={`toast-mask mask-base ${show?animateClass:''}`}>
+    <View onAnimationEnd={()=>animationEnd()} onClick={()=>handleHide()} style={{animationDuration: during+'s'}} className={`mask-base toast-mask ${show?animateClass:''}`}>
       <View className='toast'>
         {icon && (<View className='icon'>icon</View>)}
         <View>{title}</View>

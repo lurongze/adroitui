@@ -3,7 +3,9 @@
     display: none;
     justify-content: center;
     align-items: center;
-    background-color: transparent;
+    &.mask-base{
+        background-color: transparent;
+    }
     
     &.toastAnimate{
         display: flex;

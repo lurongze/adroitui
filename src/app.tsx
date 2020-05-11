@@ -1,10 +1,8 @@
-import Taro, { Component, Config } from '@tarojs/taro'
-import { Provider } from '@tarojs/redux'
+import Taro, { Component, Config } from '@tarojs/taro';
 
-import configStore from './store'
-import Index from './pages/index'
+import Index from './pages/index';
 
-import './app.scss'
+import './app.scss';
 
 // 如果需要在 h5 环境中开启 React Devtools
 // 取消以下注释：
@@ -13,10 +11,7 @@ import './app.scss'
 // }
 
 
-const store = configStore()
 class App extends Component {
-
-  theme:string = '';
 
   componentDidMount () {}
 
@@ -58,8 +53,7 @@ class App extends Component {
   // 请勿修改此函数
   render () {
     return (
-      <Provider store={store}><Index /></Provider>
-      
+      <Index />
     )
   }
 }

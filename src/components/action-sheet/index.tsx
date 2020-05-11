@@ -13,7 +13,7 @@ interface propsType {
   onHide?: Function // 点击取消的事件
 }
 export default (props: propsType) => {
-  const { show, title, actions=[], onClickItem, onHide, cancelText = '取消', clickHide=false } = props;
+  const { show, title='', actions=[], onClickItem, onHide, cancelText = '取消', clickHide=false } = props;
 
   const handleClickItem = (e: string) => {
     onClickItem && onClickItem(e);
@@ -26,11 +26,13 @@ export default (props: propsType) => {
   }
   return (
     <TransitionSlide show={show} onHide={() => handleHide()}>
-      <View className='action-sheet'>
-        <View className='title sheet-item'>{title}</View>
+      <View className={`action-sheet ${title===''?'no-title':''}`}>
         {
-          actions.map((item: { key: string, text: string }) => {
-            return (<View className='sheet-item action' key={item.key} onClick={() => handleClickItem(item.key)}>{item.text}</View>)
+          title!==''&&(<View className='title sheet-item'>{title}</View>)
+        }
+        {
+          actions.map((item: { key: string, text: string },index:number) => {
+            return (<View className={`sheet-item action ac${index}`} key={item.key} onClick={() => handleClickItem(item.key)}>{item.text}</View>)
           })
         }
         <View className='sheet-item cancel' onClick={() => handleClickItem('cancel')}>{cancelText}</View>

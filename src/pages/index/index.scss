@@ -6,7 +6,7 @@
   justify-content: center;
   min-height: 100vh;
   align-content: flex-start;
-  padding-bottom: 100px;
+  padding-bottom: 300px;
   & .title {
     width: 100vw;
     font-size: 40px;
@@ -47,6 +47,7 @@
         flex-wrap: wrap;
         & .list-title,.list-desc{
           width: 100%;
+          font-size: var(--ad-font-size-2);
         }
         & .list-desc{
           font-size: var(--ad-font-size-4);
@@ -71,6 +72,10 @@
         justify-content: space-between;
         background-color: #ffffff;
         word-break: break-all;
+        font-size: var(--ad-font-size-2);
+        & .disabled{
+          color: var(--ad-font-color-grey);
+        }
         &:active{
             background-color: #e6e6e6;
         }

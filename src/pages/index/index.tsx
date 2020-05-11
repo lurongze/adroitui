@@ -1,7 +1,6 @@
-import Taro, { useState } from "@tarojs/taro";
+import Taro, { useState, useEffect } from "@tarojs/taro";
 import { View, Text } from "@tarojs/components";
 import ThemeControl from "../themeControl";
-import { useSelector } from "@tarojs/redux";
 import "./index.scss";
 export default function Index() {
   const list = [
@@ -69,7 +68,7 @@ export default function Index() {
       ]
     },
   ];
-  const themeStore = useSelector(s => s.theme);
+  const [theme, setTheme] = useState(()=>{return Taro.getStorageSync('theme') || ''});
   const [openKey, setOpenKey] = useState("");
   const toogleOpen = (tapKey: string) => {
     if (tapKey === openKey) {
@@ -89,11 +88,15 @@ export default function Index() {
     }
   }
 
+  // useEffect(()=>{
+  //   setTheme(Taro.getStorageSync('theme')||'');
+  // },[]);
+
   return (
-    <View className={`body ${themeStore.theme}`}>
+    <View className={`body ${theme}`}>
       <View className="title">Adroit UI 组件库</View>
       <Text className="description">
-        一个基于Taro框架的简单UI组件库,风格参考微信小程序设计指南和其他一些优秀UI库。\n
+        一个基于Taro框架的简单UI组件库,风格参考微信小程序设计指南和其他一些优秀UI库。
         组件仍然在不断开发中，预计5月底~6月中把使用文档写出来后，会同时把项目代码开源并发布到NPM上。
       </Text>
 
@@ -115,7 +118,7 @@ export default function Index() {
               {item.list.map((sitem: any) => {
                 return (
                   <View className="component-list" key={sitem.title} onClick={() => toPage(sitem.path)}>
-                    <Text>{sitem.title}</Text>
+                    <Text className={sitem.path?'':'disabled'}>{sitem.title}</Text>
                     <View className='arrow-circle right'>
                       <View className='arrow' />
                     </View>
@@ -126,7 +129,7 @@ export default function Index() {
           </View>
         );
       })}
-      <ThemeControl />
+      <ThemeControl onClick={(e:string)=>setTheme(e)} />
     </View>
   );
 }
