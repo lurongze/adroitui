@@ -2,6 +2,7 @@ export { default as AdActionSheet } from "./components/action-sheet/index";
 export { default as AdButton } from "./components/button/index";
 export { default as AdCheckbox } from "./components/checkbox/index";
 export { default as AdDialog } from "./components/dialog/index";
+export { default as AdDigitalKeyboard } from "./components/digital-keyboard/index";
 export { default as AdHCDialog } from "./components/half-screen-dialog/index";
 export { default as AdLoading } from "./components/loading/index";
 export { default as AdRadio } from "./components/radio/index";

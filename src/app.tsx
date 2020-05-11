@@ -33,6 +33,7 @@ class App extends Component {
       'pages/index/index',
       'pages/base/theme',
       'pages/nav/tabs',
+      'pages/extends/digital-keyboard',
       'pages/feedback/index',
       'pages/feedback/dialog',
       'pages/feedback/hc-dialog',

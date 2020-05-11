@@ -54,7 +54,7 @@ export default function Index() {
       key: "extend",
       desc: "各种扩展",
       list: [
-        { title: "数字键盘", path: "" },
+        { title: "数字键盘", path: "/pages/extends/digital-keyboard" },
         { title: "登录页面", path: "" },
         { title: "Drawer抽屉", path: "" },
         { title: "城市选择", path: "" },
