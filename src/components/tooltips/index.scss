@@ -18,10 +18,10 @@
     &.ad--tipsAnimate1{
         animation: tooltipFrame1 ease-out forwards;
     }
-    &.ad--warn{
+    &.warn{
         background-color: var(--ad-warn-color);
     }
-    &.ad--success{
+    &.success{
         background-color: var(--ad-main-color);
     }
 }

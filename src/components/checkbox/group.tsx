@@ -31,7 +31,9 @@ export default (props: propsType) => {
   }
 
   useEffect(()=>{
-    setList(groupList);
+    if(list.length < 1){
+      setList(groupList);
+    }
   },[JSON.stringify(groupList)]);
 
   return (

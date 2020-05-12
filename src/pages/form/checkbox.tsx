@@ -1,28 +1,22 @@
 import Taro, { useState } from "@tarojs/taro";
 import { View, Text } from "@tarojs/components";
 import ThemeControl from "../themeControl";
-import { AdCheckbox, AdCheckboxGroup } from "../../index";
+import { AdCheckbox, AdCheckboxGroup, AdSpin } from "../../index";
 
 export default function Index() {
   const [theme, setTheme] = useState(() => {
     return Taro.getStorageSync("theme") || "";
   });
 
-  const [groupList, setGroupList] = useState([]);
+  const [groupList, setGroupList] = useState<Array<{key:string,text:string,checked:boolean}>>([]);
 
-  // const groupList = [
-  //   { key: "apple", text: "苹果", checked: false },
-  //   { key: "huawei", text: "华为", checked: false },
-  //   { key: "xiaomi", text: "小米", checked: false }
-  // ];
-  // const groupList = [];
   setTimeout(()=>{
     setGroupList( [
       { key: "apple", text: "苹果", checked: false },
       { key: "huawei", text: "华为", checked: false },
       { key: "xiaomi", text: "小米", checked: false }
     ])
-  }, 4000)
+  }, 3000)
 
   const [checked, setChecked] = useState<boolean>(false);
   const [checkedArray, setCheckedArray] = useState<Array<string>>([]);
@@ -56,25 +50,27 @@ export default function Index() {
         </View>
       </View>
 
-      <View className="lister">
-        <View className="header">
-          <Text>选项组,选中项为：['{checkedArray.join("','")}']</Text>
-          <View className="left-line"></View>
+      <AdSpin loading={groupList.length<1} title='模拟数据加载中...'>
+        <View className="lister">
+          <View className="header">
+            <Text>选项组,选中项为：['{checkedArray.join("','")}']</Text>
+            <View className="left-line"></View>
+          </View>
+          <View className="show-area">
+            <AdCheckboxGroup groupList={groupList} onChange={(checkedArr: Array<string>) => handleChange(checkedArr)} />
+          </View>
         </View>
-        <View className="show-area">
-          <AdCheckboxGroup groupList={groupList} onChange={(checkedArr: Array<string>) => handleChange(checkedArr)} />
-        </View>
-      </View>
 
-      <View className="lister">
-        <View className="header">
-          <Text>选项组, 不可点击</Text>
-          <View className="left-line"></View>
+        <View className="lister">
+          <View className="header">
+            <Text>选项组, 不可点击</Text>
+            <View className="left-line"></View>
+          </View>
+          <View className="show-area">
+            <AdCheckboxGroup groupList={groupList} disabled={true} />
+          </View>
         </View>
-        <View className="show-area">
-          <AdCheckboxGroup groupList={groupList} disabled={true} />
-        </View>
-      </View>
+      </AdSpin>
 
       <ThemeControl onClick={(e: string) => setTheme(e)} />
     </View>
