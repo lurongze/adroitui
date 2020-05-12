@@ -18,18 +18,18 @@ export default (props: propsType) => {
   }
   useEffect(()=>{
     if(show){
-        setTransitionClass('bounceIn');
+        setTransitionClass('ad--bounceIn');
       setHasShow(true);
     } else {
       if(hasShow){
-        setTransitionClass('bounceOut');
+        setTransitionClass('ad--bounceOut');
       }
     }
   },[show])
   return (
     <Block>
-      <View onClick={()=>handleHide()} className={`transition-mask mask-base ${show?'fadeShow':''}`}></View>
-      <View className={`transition-bounce ${transitionClass}`}>
+      <View onClick={()=>handleHide()} className={`ad--transition-mask ad--mask-base ${show?'ad--fadeShow':''}`}></View>
+      <View className={`ad--transition-bounce ${transitionClass}`}>
         {children}
       </View>
     </Block>

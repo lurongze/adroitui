@@ -1,10 +1,10 @@
 @import "../base.scss";
-.ad-checkbox{
+.ad--checkbox{
     font-size: var(--ad-font-size-2);
     color: var(--ad-font-color-desc);
     display: flex;
     align-items: center;
-    & .box{
+    & .ad--box{
         width: 34px;
         height: 34px;
         border-radius: 5px;
@@ -16,7 +16,7 @@
         align-items: center;
         transition: all .2s ease-in;
         margin-right: 5px;
-        .on{
+        .ad--on{
             // position: absolute;
             display: inline-block;
             border: 4px solid #ffffff;//var(--ad-main-color);//#ffffff;
@@ -31,16 +31,24 @@
             transition: all .2s cubic-bezier(.12,.4,.29,1.46) .1s;
         }
     }
-    &.checked .box{
+    &.ad--checked .ad--box{
         background-color: var(--ad-main-color);
-        .right{
+        .ad--right{
             opacity: 1;
         }
     }
-    &.unchecked .box{
+    &.ad--unchecked .ad--box{
         background-color: white;
-        .right{
+        .ad--right{
             opacity: 0;
         }
+    }
+}
+
+.ad--checkbox-group{
+    display: flex;
+    flex-wrap: wrap;
+    & .ad--group-item{
+        margin-left: 15px;
     }
 }

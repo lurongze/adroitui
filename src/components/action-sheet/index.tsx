@@ -26,16 +26,16 @@ export default (props: propsType) => {
   }
   return (
     <TransitionSlide show={show} onHide={() => handleHide()}>
-      <View className={`action-sheet ${title===''?'no-title':''}`}>
+      <View className={`ad--action-sheet ${title===''?'ad--no-title':''}`}>
         {
-          title!==''&&(<View className='title sheet-item'>{title}</View>)
+          title!==''&&(<View className='ad--title ad--sheet-item'>{title}</View>)
         }
         {
           actions.map((item: { key: string, text: string },index:number) => {
-            return (<View className={`sheet-item action ac${index}`} key={item.key} onClick={() => handleClickItem(item.key)}>{item.text}</View>)
+            return (<View className={`ad--sheet-item ad--action ad--ac${index}`} key={item.key} onClick={() => handleClickItem(item.key)}>{item.text}</View>)
           })
         }
-        <View className='sheet-item cancel' onClick={() => handleClickItem('cancel')}>{cancelText}</View>
+        <View className='ad--sheet-item ad--cancel' onClick={() => handleClickItem('cancel')}>{cancelText}</View>
       </View>
     </TransitionSlide>
   )

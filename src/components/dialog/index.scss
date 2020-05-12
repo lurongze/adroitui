@@ -1,5 +1,5 @@
 @import "../base.scss";
-.dialog-container {
+.ad--dialog-container {
     background-color: #ffffff;
     border-radius: 18px;
     width: 80vw;
@@ -7,7 +7,7 @@
     display: flex;
     flex-direction: column;
     transform: translateY(-5vh);
-    & .header{
+    & .ad--header{
         width: 100%;
         line-height: 2rem;
         text-align: center;
@@ -16,7 +16,7 @@
         font-size: var(--ad-font-size-2);
     }
 
-    & .content{
+    & .ad--content{
         flex: 1;
         color: var(--ad-font-color-desc);
         font-size: var(--ad-font-size-3);
@@ -26,18 +26,18 @@
         max-height: 70vh;
     }
 
-    & .action{
+    & .ad--action{
         width: 100%;
         border-top: 1px solid var(--ad-border-color);
         display: flex;
-        & .btn{
+        & .ad--btn{
             flex: 1;
             font-size: var(--ad-font-size-2);
             font-weight: 600;
             text-align: center;
             padding: 25px 0;
             color: var(--ad-link-color);
-            &.cancel{
+            &.ad--cancel{
                 color: var(--ad-font-color-black);
                 box-sizing: border-box;
                 border-right: 1px solid var(--ad-border-color);
@@ -46,12 +46,12 @@
                 background-color: var(--ad-active-bg-color);
                 border-bottom-left-radius: 18px;
             }
-            &.tw:active{
+            &.ad--tw:active{
                 background-color: var(--ad-active-bg-color);
                 border-bottom-right-radius: 18px;
                 border-bottom-left-radius: 0;
             }
-            &.ol:active{
+            &.ad--ol:active{
                 background-color: var(--ad-active-bg-color);
                 border-bottom-right-radius: 18px;
                 border-bottom-left-radius: 18px;

@@ -1,22 +1,22 @@
 @import "../base.scss";
-.dg-kb{
+.ad--dg-kb{
     width: 100vw;
     background-color: #ffffff;
     color: var(--ad-font-color-desc);
-    & .title{
+    & .ad--title{
         width: 100vw;
         padding: 20px 0;
         text-align: center;
         font-size: var(--ad-font-size-4);
     }
 
-    & .code-number{
+    & .ad--code-number{
         width: 100vw;
         box-sizing: border-box;
         padding: 0 10vw;
         display: flex;
         justify-content: space-around;
-        & .num{
+        & .ad--num{
             height: 100px;
             line-height: 100px;
             border-bottom: 4px solid var(--ad-font-color-desc);
@@ -26,7 +26,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            & .dot{
+            & .ad--dot{
                 width: 20px;
                 height: 20px;
                 border-radius: 50%;
@@ -35,12 +35,12 @@
         }
     }
 
-    & .keybord-block{
+    & .ad--keybord-block{
         display: flex;
         flex-wrap: wrap;
         font-size: var(--ad-font-size-3);
         margin-top: 30px;
-        & .key-item{
+        & .ad--key-item{
             width: 33.33vw;
             padding: 20px;
             box-sizing: border-box;

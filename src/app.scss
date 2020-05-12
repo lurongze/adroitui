@@ -160,12 +160,14 @@ page .adpage {
     align-items: center;
     justify-content: center;
     background-color: var(--ad-main-color);
+    box-sizing: border-box;
     .arrow {
         width: 10px;
         height: 10px;
-        border-top: 5px solid #ffffff; // var(--ad-main-color);
-        border-right: 5px solid #ffffff; // var(--ad-main-color);
-        transform: translateX(-2px);
+        border-top: 5px solid;
+        border-right: 5px solid;
+        border-color: #ffffff;
+        // transform: translateX(-2px);
     }
     transition: all 0.5s ease;
     &.right {
@@ -178,3 +180,4 @@ page .adpage {
         transform: rotateZ(135deg);
     }
 }
+

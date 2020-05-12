@@ -32,6 +32,8 @@ class App extends Component {
     pages: [
       'pages/index/index',
       'pages/base/theme',
+      'pages/base/loading',
+      'pages/base/arrow',
       'pages/nav/tabs',
       'pages/extends/digital-keyboard',
       'pages/feedback/index',
@@ -40,6 +42,7 @@ class App extends Component {
       'pages/feedback/actionsheet',
       'pages/feedback/tttips',
       'pages/feedback/spin',
+      'pages/form/checkbox',
       'pages/form/button'
     ],
     window: {

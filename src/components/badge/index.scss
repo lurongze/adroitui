@@ -1,0 +1,31 @@
+@import "../base.scss";
+.arrow-circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--ad-main-color);
+  box-sizing: border-box;
+  .arrow {
+      width: 10px;
+      height: 10px;
+      border-top: 5px solid;
+      border-right: 5px solid;
+      border-color: #ffffff;
+  }
+  transition: all 0.5s ease;
+  &.right {
+      transform: rotateZ(45deg);
+  }
+  &.up {
+      transform: rotateZ(-45deg);
+  }
+  &.down {
+      transform: rotateZ(135deg);
+  }
+  &.left {
+    transform: rotateZ(-135deg);
+}
+}

@@ -46,14 +46,14 @@ export default (props: propsType) => {
 
   return (
     <TransitionBounce show={show} onHide={() => handleHide()}>
-      <View className='dialog-container'>
-        <View className='header'>{title}</View>
+      <View className='ad--dialog-container'>
+        <View className='ad--header'>{title}</View>
         {
-          content.length > 0 ? (<ScrollView enableFlex scrollY style={styObj} className='content'>{content}</ScrollView>) : (<ScrollView enableFlex scrollY style={styObj} className='content'>{children}</ScrollView>)
+          content.length > 0 ? (<ScrollView enableFlex scrollY style={styObj} className='ad--content'>{content}</ScrollView>) : (<ScrollView enableFlex scrollY style={styObj} className='ad--content'>{children}</ScrollView>)
         }
-        <View className='action'>
-          {showClose && (<View className='btn cancel' onClick={() => handleClickItem('cancel')}>{cancelText}</View>)}
-          <View className={`btn ${showClose?'tw':'ol'}`} onClick={() => handleClickItem('confirm')}>{confirmText}</View>
+        <View className='ad--action'>
+          {showClose && (<View className='ad--btn ad--cancel' onClick={() => handleClickItem('cancel')}>{cancelText}</View>)}
+          <View className={`ad--btn ${showClose?'ad--tw':'ad--ol'}`} onClick={() => handleClickItem('confirm')}>{confirmText}</View>
         </View>
       </View>
     </TransitionBounce>

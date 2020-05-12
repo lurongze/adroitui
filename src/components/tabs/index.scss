@@ -1,10 +1,10 @@
 @import "../base.scss";
-.tabs {
+.ad--tabs {
     width: 100vw;
     height: 80px;
     white-space: nowrap;
     background-color: #ffffff;
-    & .tab-item {
+    & .ad--tab-item {
         display: inline-flex;
         height: 100%;
         align-items: center;
@@ -13,7 +13,7 @@
         color: var(--ad-font-color-black);
         position: relative;
         justify-content: center;
-        & .title {
+        & .ad--title {
             display: block;
             width: 100%;
             overflow: hidden;
@@ -21,7 +21,7 @@
             white-space: nowrap;
             text-align: center;
         }
-        & .tab-line {
+        & .ad--tab-line {
             position: absolute;
             bottom: 0;
             left: 50%;
@@ -33,10 +33,10 @@
             width: 0;
             transition: width 0.1s ease-in-out;
         }
-        &.active {
+        &.ad--active {
             font-weight: 600;
             color: var(--ad-main-color);
-            & .tab-line {
+            & .ad--tab-line {
                 width: 100%;
             }
         }

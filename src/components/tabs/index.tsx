@@ -29,13 +29,13 @@ export default (props: propsType) => {
     styObj = Object.assign(styObj,{width,margin:'0',padding:'0'});
   }
   return (
-    <ScrollView scrollX className='tabs' scrollIntoView={vieItem}>
+    <ScrollView scrollX className='ad--tabs' scrollIntoView={vieItem}>
       {
         tabs.map((item:{title:string,key:string})=>{
           return (
-            <View style={styObj} className={`tab-item ${active===item.key?'active':''}`} key={item.key} id={item.key} onClick={()=>handleClick(item.key)}>
-              <Text className='title'>{item.title}</Text>
-              <View className={`tab-line`}></View>
+            <View style={styObj} className={`ad--tab-item ${active===item.key?'ad--active':''}`} key={item.key} id={item.key} onClick={()=>handleClick(item.key)}>
+              <Text className='ad--title'>{item.title}</Text>
+              <View className='ad--tab-line'></View>
             </View>
           )
         })

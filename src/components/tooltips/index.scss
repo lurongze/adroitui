@@ -1,5 +1,5 @@
 @import "../base.scss";
-.tooltips{
+.ad--tooltips{
     position: fixed;
     width: 100vw;
     top: 0;
@@ -12,16 +12,16 @@
     color: white;
     background-color: rgba(#000000, .8);
     transform: translateY(-100%);
-    &.tipsAnimate{
+    &.ad--tipsAnimate{
         animation: tooltipFrame ease-in-out forwards;
     }
-    &.tipsAnimate1{
+    &.ad--tipsAnimate1{
         animation: tooltipFrame1 ease-out forwards;
     }
-    &.warn{
+    &.ad--warn{
         background-color: var(--ad-warn-color);
     }
-    &.success{
+    &.ad--success{
         background-color: var(--ad-main-color);
     }
 }

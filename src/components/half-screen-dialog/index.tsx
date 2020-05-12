@@ -50,35 +50,35 @@ export default (props: propsType) => {
   }
   return (
     <TransitionSlide show={show} onHide={() => handleHide()}>
-      <View className="container">
+      <View className="ad--hs-dg">
         {noHeader ? (
-          <View className="header">
-            <View className={`center line`} onClick={() => handleHide()}>
-              <View className="bloder-line"></View>
+          <View className="ad--header">
+            <View className={`ad--center ad--line`} onClick={() => handleHide()}>
+              <View className="ad--bloder-line"></View>
             </View>
           </View>
         ) : (
-          <View className="header">
+          <View className="ad--header">
             {showClose && (
-              <View className="icon" onClick={() => handleHide()}>
+              <View className="ad--icon" onClick={() => handleHide()}>
                 ×
               </View>
             )}
-            <View className={`center ${showClose ? "" : "no-close"}`}>
-              <View className="title">{title}</View>
-              {desc.length > 0 && <View className="desc">{desc}</View>}
+            <View className={`ad--center ${showClose ? "" : "ad--no-close"}`}>
+              <View className="ad--title">{title}</View>
+              {desc.length > 0 && <View className="ad--desc">{desc}</View>}
             </View>
             {showMore && (
-              <View className="icon" onClick={() => handleClickItem("more")}>
+              <View className="ad--icon" onClick={() => handleClickItem("more")}>
                 ···
               </View>
             )}
           </View>
         )}
 
-        <ScrollView scrollY enableFlex style={styObj} className="content">{props.children}</ScrollView>
+        <ScrollView scrollY enableFlex style={styObj} className="ad--content">{props.children}</ScrollView>
         {showBtns && (
-          <View className="action-btn">
+          <View className="ad--action-btn">
             <AdButton
               onClick={() => handleClickItem("secondary")}
               type="secondary"

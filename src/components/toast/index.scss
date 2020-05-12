@@ -1,21 +1,21 @@
 @import "../base.scss";
-.toast-mask{
+.ad--toast-mask{
     display: none;
     justify-content: center;
     align-items: center;
-    &.mask-base{
+    &.ad--mask-base{
         background-color: transparent;
     }
     
-    &.toastAnimate{
+    &.ad--toastAnimate{
         display: flex;
         animation: toastFrame ease-in-out forwards;
     }
-    &.toastAnimateIn{
+    &.ad--toastAnimateIn{
         display: flex;
         animation: toastFrame1 ease-in-out forwards;
     }
-    & .toast{
+    & .ad--toast{
         background-color: #4c4c4c;
         color: #ffffff;
         font-size: var(--ad-font-size-3);

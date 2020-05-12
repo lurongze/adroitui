@@ -1,11 +1,11 @@
 @import "../base.scss";
-.loading{
+.ad--loading{
     display: flex;
     align-items: center;
     font-size: var(--ad-font-size-4);
     color: var(--ad-font-color-grey);
 }
-.loading-ring {
+.ad--loading-ring {
   width: 20px;
   height: 20px;
   box-sizing: border-box;

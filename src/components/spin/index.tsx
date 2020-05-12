@@ -14,15 +14,15 @@ export default (props: propsType) => {
   const { loading = false, fullscreen = false, title ='', onClick,children } = props;
 
   return (
-    <View className="ad-spin" onClick={()=>{onClick && onClick()}}>
-      <View className={`mask ${loading?'show':'hide'} ${fullscreen?'full-spin':''}`}>
-        <View className="spin">
-          <View className="dot"></View>
-          <View className="dot"></View>
-          <View className="dot"></View>
-          <View className="dot"></View>
+    <View className="ad-ad--spin" onClick={()=>{onClick && onClick()}}>
+      <View className={`ad--mask ${loading?'ad--show':'ad--hide'} ${fullscreen?'ad--full-spin':''}`}>
+        <View className="ad--spin">
+          <View className="ad--dot"></View>
+          <View className="ad--dot"></View>
+          <View className="ad--dot"></View>
+          <View className="ad--dot"></View>
         </View>
-        <View className="title">{title}</View>
+        <View className="ad--title">{title}</View>
       </View>
       {children}
     </View>

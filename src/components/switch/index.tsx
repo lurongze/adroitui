@@ -20,11 +20,11 @@ export default (props: propsType) => {
     }
   }
   return (
-    <View onClick={()=>handleClick()} className={`ad-switch ${checked?'on':'off'} ${disabled?'disabled':''}`}>
-      <View className='left'></View>
-      <View className='right'></View>
-      <View className='circel'></View>
-      <View className={`switch-loading flex-center ${loading?'show':''}`}>
+    <View onClick={()=>handleClick()} className={`ad--switch ${checked?'ad--on':'ad--off'} ${disabled?'ad--disabled':''}`}>
+      <View className='ad--left'></View>
+      <View className='ad--right'></View>
+      <View className='ad--circel'></View>
+      <View className={`ad--switch-loading ad--flex-center ${loading?'ad--show':''}`}>
         <AdLoading color='rgba(0, 0, 0, 0.2)' />
       </View>
     </View>

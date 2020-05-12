@@ -1,7 +1,7 @@
 import Taro, { useState } from "@tarojs/taro";
 import { View, Text } from "@tarojs/components";
 import ThemeControl from "../themeControl";
-import AButton from "../../components/button/index";
+import {AdButton} from "../../index";
 
 export default function Index() {
   const [theme, setTheme] = useState(() => {
@@ -18,13 +18,13 @@ export default function Index() {
           <View className="left-line"></View>
         </View>
         <View className="show-area">
-          <AButton
+          <AdButton
             className="btn"
             loading={loading}
             onClick={() => setLoading(!loading)}
           >
             按钮
-          </AButton>
+          </AdButton>
         </View>
       </View>
 
@@ -34,9 +34,9 @@ export default function Index() {
           <View className="left-line"></View>
         </View>
         <View className="show-area">
-          <AButton className="btn" loading={true}>
+          <AdButton className="btn" loading={true}>
             页面主操作
-          </AButton>
+          </AdButton>
         </View>
       </View>
 
@@ -46,9 +46,9 @@ export default function Index() {
           <View className="left-line"></View>
         </View>
         <View className="show-area">
-          <AButton className="btn" type="warn">
+          <AdButton className="btn" type="warn">
             页面主操作
-          </AButton>
+          </AdButton>
         </View>
       </View>
 
@@ -58,7 +58,7 @@ export default function Index() {
           <View className="left-line"></View>
         </View>
         <View className="show-area">
-          <AButton type="secondary">页面主操作</AButton>
+          <AdButton type="secondary">页面主操作</AdButton>
         </View>
       </View>
 
@@ -68,15 +68,15 @@ export default function Index() {
           <View className="left-line"></View>
         </View>
         <View className="show-area">
-          <AButton className="btn" size="mini">
+          <AdButton className="btn" size="mini">
             按钮
-          </AButton>
-          <AButton className="btn" type="warn" size="mini">
+          </AdButton>
+          <AdButton className="btn" type="warn" size="mini">
             警告
-          </AButton>
-          <AButton className="btn" type="secondary" size="mini">
+          </AdButton>
+          <AdButton className="btn" type="secondary" size="mini">
             次要
-          </AButton>
+          </AdButton>
         </View>
       </View>
 
@@ -86,9 +86,9 @@ export default function Index() {
           <View className="left-line"></View>
         </View>
         <View className="show-area">
-        <AButton className="btn" bgColor="red" color="black" loadingColor="blue" loading={true}>
+        <AdButton className="btn" bgColor="red" color="black" loadingColor="blue" loading={true}>
           自定义颜色
-        </AButton>
+        </AdButton>
         </View>
       </View>
 

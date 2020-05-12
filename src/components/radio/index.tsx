@@ -18,9 +18,9 @@ export default (props: propsType) => {
     }
   }
   return (
-    <View onClick={()=>handleClick()} className={`ad-checkbox ${checked?'checked':'unchecked'} ${disabled?'disabled':''}`}>
-      <View className='box'><Text className='on'></Text></View>
-      <Text className='text'>{text}</Text>
+    <View onClick={()=>handleClick()} className={`ad--radio ${checked?'ad--checked':'ad--unchecked'} ${disabled?'ad--disabled':''}`}>
+      <View className='ad--box'><Text className='ad--on'></Text></View>
+      <Text className='ad--text'>{text}</Text>
     </View>
   )
 }

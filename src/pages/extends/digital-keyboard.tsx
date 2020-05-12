@@ -10,9 +10,21 @@ export default function Index() {
   const [show, setShow] = useState<boolean>(false);
   const [show1, setShow1] = useState<boolean>(false);
   const [show2, setShow2] = useState<boolean>(false);
-  const resCode = (e:number)=>{
-    Taro.showToast({title:`输入数字为：${e}`, icon:'none'});
-  }
+  const resCode = (type: string, e: string, finish: boolean) => {
+    if (finish) {
+      Taro.showToast({ title: `输入数字为：${e}`, icon: "none" });
+      switch (type) {
+        case "input-event":
+          setShow1(false);
+          break;
+        case "dot":
+          setShow2(false);
+          break;
+      }
+    } else {
+      console.log(`当前输入数字为：${e}`);
+    }
+  };
   return (
     <View className={`page-padding ${theme}`}>
       <View className="lister">
@@ -27,7 +39,7 @@ export default function Index() {
 
       <View className="lister">
         <View className="header">
-          <Text>输完响应事件</Text>
+          <Text>响应输入事件</Text>
           <View className="left-line"></View>
         </View>
         <View className="show-area">
@@ -46,22 +58,22 @@ export default function Index() {
       </View>
 
       <Block>
-        <AdDigitalKeyboard
-          show={show}
-          onHide={() => setShow(false)}
-        />
+        <AdDigitalKeyboard show={show} onHide={() => setShow(false)} />
 
         <AdDigitalKeyboard
           length={6}
           show={show1}
           onHide={() => setShow1(false)}
-          onComplete={(e:number) => {setShow1(false);resCode(e);}}
+          onInput={(e: string, finish: boolean) =>
+            resCode("input-event", e, finish)
+          }
         />
 
         <AdDigitalKeyboard
           show={show2}
           showNum={false}
-          onComplete={(e:number) => resCode(e)}
+          hideClear={false}
+          onInput={(e: string, finish: boolean) => resCode("dot", e, finish)}
           onHide={() => setShow2(false)}
         />
         <ThemeControl onClick={(e: string) => setTheme(e)} />

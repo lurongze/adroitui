@@ -1,10 +1,10 @@
 @import "../base.scss";
-.ad-checkbox{
+.ad--radio{
     font-size: var(--ad-font-size-2);
     color: var(--ad-font-color-desc);
     display: flex;
     align-items: center;
-    & .box{
+    & .ad--box{
         width: 34px;
         height: 34px;
         border-radius: 50%;
@@ -16,7 +16,7 @@
         justify-content: center;
         transition: all .2s ease-in;
         margin-right: 5px;
-        .on{
+        .ad--on{
             // position: absolute;//absolute;
             display: inline-block;
             border-radius: 50%;
@@ -27,10 +27,10 @@
             // top: 8px;
         }
     }
-    &.checked .box{
+    &.ad--checked .ad--box{
         background-color: var(--ad-main-color);
     }
-    &.unchecked .box{
+    &.ad--unchecked .ad--box{
         background-color: white;
     }
 }

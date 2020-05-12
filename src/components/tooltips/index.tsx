@@ -22,15 +22,15 @@ export default (props: propsType) => {
   const animationEnd = () => {
     autoClose && onHide && onHide();
   }
-  let animateClass = 'tipsAnimate';
+  let animateClass = 'ad--tipsAnimate';
   
   let ad = during;
   if (!autoClose) {
-    animateClass = 'tipsAnimate1';
+    animateClass = 'ad--tipsAnimate1';
     ad = during/2.5;
   }
   return (
-    <View onAnimationEnd={() => animationEnd()} style={{ animationDuration: ad + 's' }} onClick={() => handleClick()} className={`tooltips ${type} ${show ? animateClass : ''}`}>
+    <View onAnimationEnd={() => animationEnd()} style={{ animationDuration: ad + 's' }} onClick={() => handleClick()} className={`ad--tooltips ${type} ${show ? animateClass : ''}`}>
       {title}
     </View>
   )

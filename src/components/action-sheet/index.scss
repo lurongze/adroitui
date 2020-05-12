@@ -1,12 +1,12 @@
 @import "../base.scss";
-.action-sheet{
+.ad--action-sheet{
     background-color: #ffffff;
     width: 100vw;
     border-top-left-radius: 16px;
     border-top-right-radius: 16px;
     display: flex;
     flex-wrap: wrap;
-    & .sheet-item{
+    & .ad--sheet-item{
         display: flex;
         width: 100vw;
         padding: 28px 0;
@@ -14,7 +14,7 @@
         color: var(--ad-font-color-black);
         justify-content: center;
         border-bottom: 1px solid var(--ad-border-color);
-        &.title{
+        &.ad--title{
             border-top: none;
             box-sizing: border-box;
             padding: 25px;
@@ -22,19 +22,19 @@
             font-size: var(--ad-font-size-4);
             color: var(--ad-font-color-grey);
         }
-        &.cancel{
+        &.ad--cancel{
             border-top: 15px solid var(--ad-border-color);
         }
-        &.action:active{
+        &.ad--action:active{
             background-color: var(--ad-active-bg-color);
         }
-        &.cancel:active{
+        &.ad--cancel:active{
             background-color: var(--ad-active-bg-color);
         }
         
         
     }
-    &.no-title .ac0{
+    &.ad--no-title .ad--ac0{
         border-top-left-radius: 18px;
         border-top-right-radius: 18px;
     }

@@ -23,14 +23,14 @@ export default (props: propsType) => {
   const animationEnd = ()=>{
     autoClose && onHide && onHide();
   }
-  let animateClass = 'toastAnimate';
+  let animateClass = 'ad--toastAnimate';
   if(!autoClose){
-    animateClass = 'toastAnimateIn';
+    animateClass = 'ad--toastAnimateIn';
   }
   return (
-    <View onAnimationEnd={()=>animationEnd()} onClick={()=>handleHide()} style={{animationDuration: during+'s'}} className={`mask-base toast-mask ${show?animateClass:''}`}>
-      <View className='toast'>
-        {icon && (<View className='icon'>icon</View>)}
+    <View onAnimationEnd={()=>animationEnd()} onClick={()=>handleHide()} style={{animationDuration: during+'s'}} className={`ad--mask-base ad--toast-mask ${show?animateClass:''}`}>
+      <View className='ad--toast'>
+        {icon && (<View className='ad--icon'>icon</View>)}
         <View>{title}</View>
       </View>
     </View>

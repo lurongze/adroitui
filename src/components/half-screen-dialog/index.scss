@@ -1,16 +1,16 @@
 @import "../base.scss";
-.container{
+.ad--hs-dg{
     background-color: #ffffff;
     width: 100vw;
     border-top-left-radius: 16px;
     border-top-right-radius: 16px;
     display: flex;
     flex-wrap: wrap;
-    & .header{
+    & .ad--header{
         display: flex;
         align-items: center;
         width: 100vw;
-        & .icon{
+        & .ad--icon{
             padding: 0 20px;
             height: 100%;
             display: flex;
@@ -18,29 +18,29 @@
             font-weight: 700;
             color: var(--ad-font-color-black);
         }
-        & .center{
+        & .ad--center{
             flex: 1;
             text-align: center;
             padding-top: 10px;
-            &.line{
+            &.ad--line{
                 display: flex;
                 justify-content: center;
             }
-            & .bloder-line{
+            & .ad--bloder-line{
                 width: 20vw;
                 height: 0;
                 border: 4px solid var(--ad-font-color-light-grey);
                 border-radius: 4px;
             }
-            &.no-close{
+            &.ad--no-close{
                 text-align: left;
                 text-indent: 1rem;
             }
-            & .title{
+            & .ad--title{
                 font-size: var(--ad-font-size-2);
                 color: var(--ad-font-color-black);
             }
-            & .desc{
+            & .ad--desc{
                 font-size: var(--ad-font-size-3);
                 color: var(--ad-font-color-grey);
                 padding: 5px 0;
@@ -48,7 +48,7 @@
         }
     }
 
-    & .content{
+    & .ad--content{
         display: flex;
         width: 100vw;
         box-sizing: border-box;
@@ -56,7 +56,7 @@
         padding: 15px;
         max-height: 50vh;
     }
-    & .action-btn{
+    & .ad--action-btn{
         display: flex;
         width: 100vw;
         padding: 20px 0;

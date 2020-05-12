@@ -1,5 +1,5 @@
 @import "../base.scss";
-.transition-container {
+.ad--transition-container {
     position: fixed;
     width: 100vw;
     left: 0;
@@ -7,7 +7,7 @@
     z-index: 500;
     transform: translate3d(0, 100%, 0);
 }
-.transition-bounce{
+.ad--transition-bounce{
     position: fixed;
     width: 100vw;
     height: 100vh;
@@ -19,28 +19,28 @@
     top: 0;
     transform: translate3d(0, 100%, 0);
 }
-.transition-mask {
+.ad--transition-mask {
     display: none;
 }
-.fadeShow {
+.ad--fadeShow {
     display: block;
-    animation: fadeIn 0.05s ease forwards;
+    animation: ad--fadeIn 0.05s ease forwards;
 }
-.slideShow {
-    animation: slideInUp 0.3s ease-in-out forwards;
+.ad--slideShow {
+    animation: ad--slideInUp 0.3s ease-in-out forwards;
 }
-.slideHide {
-    animation: slideDown 0.2s ease-in-out forwards;
-}
-
-.bounceIn {
-    animation: bounceInFrame 0.2s ease-in-out forwards;
-}
-.bounceOut {
-    animation: bounceOutFrame 0.1s ease forwards;
+.ad--slideHide {
+    animation: ad--slideDown 0.2s ease-in-out forwards;
 }
 
-@keyframes fadeIn {
+.ad--bounceIn {
+    animation: ad--bounceInFrame 0.2s ease-in-out forwards;
+}
+.ad--bounceOut {
+    animation: ad--bounceOutFrame 0.1s ease forwards;
+}
+
+@keyframes ad--fadeIn {
     from {
         opacity: 0;
     }
@@ -50,7 +50,7 @@
     }
 }
 
-@keyframes slideInUp {
+@keyframes ad--slideInUp {
     from {
         transform: translate3d(0, 100%, 0);
         visibility: visible;
@@ -61,7 +61,7 @@
     }
 }
 
-@keyframes slideDown {
+@keyframes ad--slideDown {
     from {
         transform: translate3d(0, 0, 0);
     }
@@ -72,49 +72,18 @@
     }
 }
 
-@keyframes bounceInFrame {
+@keyframes ad--bounceInFrame {
     from{
             opacity: 0;
         transform: scale3d(0.3, 0.3, 0.3);
     }
-    // from,
-    // 20%,
-    // 40%,
-    // 60%,
-    // 80%,
-    // to {
-    //     animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-    // }
-
-    // 0% {
-    //     opacity: 0;
-    //     transform: scale3d(0.3, 0.3, 0.3);
-    // }
-
-    // 20% {
-    //     transform: scale3d(1.1, 1.1, 1.1);
-    // }
-
-    // 40% {
-    //     transform: scale3d(0.9, 0.9, 0.9);
-    // }
-
-    // 60% {
-    //     opacity: 1;
-    //     transform: scale3d(1.03, 1.03, 1.03);
-    // }
-
-    // 80% {
-    //     transform: scale3d(0.97, 0.97, 0.97);
-    // }
-
     to {
         opacity: 1;
         transform: scale3d(1, 1, 1);
     }
 }
 
-@keyframes bounceOutFrame {
+@keyframes ad--bounceOutFrame {
     20% {
       transform: scale3d(0.9, 0.9, 0.9);
     }
@@ -122,13 +91,10 @@
     50%,
     55% {
       opacity: 1;
-    //   transform: scale3d(1.1, 1.1, 1.1);
     }
   
     to {
       opacity: 0;
-    //   display: none;
-    //   transform: scale3d(0.3, 0.3, 0.3);
     transform: scale3d(0, 0, 0);
     }
   }

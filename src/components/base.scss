@@ -48,13 +48,13 @@ page{
 
 
 
-.flex-center{
+.ad--flex-center{
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.opacity-item{
+.ad--opacity-item{
     position: absolute;
     width: 100%;
     height: 100%;
@@ -63,7 +63,7 @@ page{
     opacity: 0;
 }
 
-.mask-base{
+.ad--mask-base{
     width: 100vw;
     height: 100vh;
     position: fixed;
