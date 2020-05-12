@@ -1,6 +1,6 @@
 import Taro, { useState, useEffect } from "@tarojs/taro";
-import { View } from "@tarojs/components";
-import AdCheckbox from "./index";
+import { View, Text } from "@tarojs/components";
+import AdRadio from "./index";
 import "./index.scss";
 
 interface propsType {
@@ -20,14 +20,11 @@ export default (props: propsType) => {
 
   const handleClk = (e: string) => {
     const newList = list.map(item => {
-      if (item.key === e) {
-        item.checked = !item.checked;
-      }
+      item.checked = item.key === e;
       return item;
     });
     setList(newList);
-    const checkedArr: Array<string> = newList.filter((item: { key: string, text: string, checked: boolean }) => item.checked).map((item: { key: string, text: string, checked: boolean }) => item.key);
-    onChange && onChange(checkedArr);
+    onChange && onChange(e);
   }
 
   useEffect(()=>{
@@ -39,7 +36,7 @@ export default (props: propsType) => {
       {list.map((item: { key: string, text: string, checked: boolean }) => {
         return (
           <View className='ad--group-item' key={item.key}>
-            <AdCheckbox checked={item.checked} disabled={disabled} text={item.text} onClick={() => handleClk(item.key)} />
+            <AdRadio checked={item.checked} disabled={disabled} text={item.text} onClick={() => handleClk(item.key)} />
           </View>
         );
       })}

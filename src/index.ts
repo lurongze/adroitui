@@ -8,6 +8,7 @@ export { default as AdDigitalKeyboard } from "./components/digital-keyboard/inde
 export { default as AdHCDialog } from "./components/half-screen-dialog/index";
 export { default as AdLoading } from "./components/loading/index";
 export { default as AdRadio } from "./components/radio/index";
+export { default as AdRadioGroup } from "./components/radio/group";
 export { default as AdSpin } from "./components/spin/index";
 export { default as AdSwitch } from "./components/switch/index";
 export { default as AdTabs } from "./components/tabs/index";

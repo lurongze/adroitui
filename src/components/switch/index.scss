@@ -13,11 +13,6 @@
     box-sizing: border-box;
     padding: 0 15px 0 25px;
     transition: all .5s ease;
-    &.ad--disabled{
-        & .ad--circel{
-            background-color: var(--ad-grey-bg-color);
-        }
-    }
     & .ad--right,.ad--left{
         width: 20px;
         height: 20px;
@@ -61,7 +56,18 @@
         background-color: rgba(white,.7);
         display: none;
         &.ad--show{
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+        }
+    }
+
+    &.ad--disabled{
+        & .ad--circel{
+            background-color: var(--ad-grey-bg-color);
+        }
+
+        &.ad--on{
+            background-color: var(--ad-active-bg-color);
         }
     }
 

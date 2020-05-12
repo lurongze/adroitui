@@ -4,6 +4,7 @@
     color: var(--ad-font-color-desc);
     display: flex;
     align-items: center;
+    
     & .ad--box{
         width: 34px;
         height: 34px;
@@ -41,6 +42,15 @@
         background-color: white;
         .ad--right{
             opacity: 0;
+        }
+    }
+    &.ad--disabled{
+        color: var(--ad-font-color-grey);
+        & .ad--box{
+            border-color: var(--ad-font-color-grey);
+        }
+        &.ad--checked .ad--box{
+            background-color: var(--ad-font-color-grey);
         }
     }
 }

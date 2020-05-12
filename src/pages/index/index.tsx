@@ -26,7 +26,9 @@ export default function Index() {
       desc: "表单内容，按钮，单选，多选",
       list: [
         { title: "按钮", path: "/pages/form/button" },
-        { title: "Checkbox", path: "/pages/form/checkbox" }
+        { title: "Radio选项", path: "/pages/form/radio" },
+        { title: "Checkbox选项", path: "/pages/form/checkbox" },
+        { title: "Switch切换", path: "/pages/form/switch" },
       ]
     },
     {

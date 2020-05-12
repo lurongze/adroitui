@@ -43,6 +43,8 @@ class App extends Component {
       'pages/feedback/tttips',
       'pages/feedback/spin',
       'pages/form/checkbox',
+      'pages/form/radio',
+      'pages/form/switch',
       'pages/form/button'
     ],
     window: {

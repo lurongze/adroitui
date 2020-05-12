@@ -25,7 +25,7 @@ export default (props: propsType) => {
       <View className='ad--right'></View>
       <View className='ad--circel'></View>
       <View className={`ad--switch-loading ad--flex-center ${loading?'ad--show':''}`}>
-        <AdLoading color='rgba(0, 0, 0, 0.2)' />
+        <AdLoading color='var(--ad-main-color)' />
       </View>
     </View>
   )

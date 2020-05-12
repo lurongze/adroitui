@@ -33,4 +33,14 @@
     &.ad--unchecked .ad--box{
         background-color: white;
     }
+    &.ad--disabled{
+        color: var(--ad-font-color-grey);
+        &.ad--checked .ad--box{
+            border-color: var(--ad-font-color-grey);
+            background-color: var(--ad-font-color-grey);
+        }
+        &.ad--unchecked .ad--box{
+            border-color: var(--ad-font-color-grey);
+        }
+    }
 }

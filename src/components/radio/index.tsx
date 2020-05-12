@@ -3,7 +3,7 @@ import { View, Text } from '@tarojs/components';
 import './index.scss';
 
 interface propsType{
-  loading?: boolean, // 加载中状态
+  // loading?: boolean, // 加载中状态
   disabled?: boolean, // 禁用状态
   checked: boolean, // 选中状态
   text: string, // 文字
