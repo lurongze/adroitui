@@ -140,7 +140,8 @@ page .adpage {
     font-weight: 700;
     bottom: 20px;
     right: 20px;
-    display: flex;
+    // display: flex;
+    display: none;
     flex-wrap: wrap;
     align-content: center;
     & .txt {

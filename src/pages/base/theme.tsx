@@ -1,42 +1,26 @@
 import Taro, { useState } from "@tarojs/taro";
-import { View, Block, Text } from "@tarojs/components";
-import ThemeControl from "../themeControl";
-import {
-  AdHCDialog,
-  AdButton
-} from "../../index";
+import { View, Text } from "@tarojs/components";
 
 export default function Index() {
-  const [theme, setTheme] = useState(()=>{return Taro.getStorageSync('theme') || ''});
-  const [show, setShow] = useState<boolean>(false);
-
-
-  const clickItem = (e: string) => {
-    Taro.showToast({ title: `你点击了key:${e}`, icon: "none" });
-  }
+  const [theme] = useState(() => {
+    return Taro.getStorageSync("theme") || "";
+  });
   return (
     <View className={`page-padding ${theme}`}>
 
+
+
       <View className="lister">
+        <View className="header">
+          <Text>自定义主题色</Text>
+          <View className="left-line"></View>
+        </View>
+        <View className="show-area">
         <Text className="desc pad">
-          onClickItem="function"\n 返回key：'main主按钮'|'secondary次按钮'|'more右上角更多图标'\n
-          onHide="function"
+          Adroit UI 的主题色和一些字体等的值，都是使用css3中的var变量，主题色是var(--ad-main-color),通过在app.scss中覆盖默认的值，可以很容易的使用自定义的主题色。
         </Text>
-        <AdButton onClick={() => setShow(true)}>普通使用</AdButton>
+        </View>
       </View>
-
-
-      <Block>
-        <AdHCDialog
-          show={show}
-          onHide={() => setShow(false)}
-          onClickItem={(e: string) => clickItem(e)}
-        >
-          我是半屏组件里面的内容
-        </AdHCDialog>
-
-        <ThemeControl onClick={(e:string)=>setTheme(e)} />
-      </Block>
     </View>
   );
 }
