@@ -15,11 +15,7 @@ export default function Index() {
   ];
 
   const [checked, setChecked] = useState<boolean>(false);
-  const [checkedRadio, setCheckedRadio] = useState<string>('');
-
-  const handleChange = (e: string) => {
-    setCheckedRadio(e);
-  }
+  const [checkedKey, setCheckedKey] = useState<string>('');
 
   return (
     <View className={`page-padding ${theme}`}>
@@ -46,21 +42,21 @@ export default function Index() {
 
       <View className="lister">
         <View className="header">
-          <Text>单选组，选中值：{checkedRadio}</Text>
+          <Text>单选组，选中值：{checkedKey}</Text>
           <View className="left-line"></View>
         </View>
         <View className="show-area">
-          <AdRadioGroup groupList={groupList} onChange={(e: string) => handleChange(e)} />
+          <AdRadioGroup groupList={groupList} onChange={(e: string) => setCheckedKey(e)} checkedKey={checkedKey} />
         </View>
       </View>
 
       <View className="lister">
         <View className="header">
-          <Text>不可点击组</Text>
+          <Text>不可点击组.</Text>
           <View className="left-line"></View>
         </View>
         <View className="show-area">
-          <AdRadioGroup groupList={groupList} disabled={true} onChange={(e: string) => handleChange(e)} />
+          <AdRadioGroup groupList={groupList} disabled={true} />
         </View>
       </View>
 

@@ -8,13 +8,13 @@ export default function Index() {
     return Taro.getStorageSync("theme") || "";
   });
 
-  const [groupList, setGroupList] = useState<Array<{key:string,text:string,checked:boolean}>>([]);
+  const [groupList, setGroupList] = useState<Array<{key:string,text:string}>>([]);
 
   setTimeout(()=>{
     setGroupList( [
-      { key: "apple", text: "苹果", checked: false },
-      { key: "huawei", text: "华为", checked: false },
-      { key: "xiaomi", text: "小米", checked: false }
+      { key: "apple", text: "苹果" },
+      { key: "huawei", text: "华为" },
+      { key: "xiaomi", text: "小米" }
     ])
   }, 3000)
 
@@ -22,7 +22,7 @@ export default function Index() {
   const [checkedArray, setCheckedArray] = useState<Array<string>>([]);
 
   const handleChange = (checkedArr: Array<string>) => {
-    console.log(checkedArr);
+    //console.log(checkedArr);
     setCheckedArray(checkedArr);
   }
 
@@ -57,7 +57,7 @@ export default function Index() {
             <View className="left-line"></View>
           </View>
           <View className="show-area">
-            <AdCheckboxGroup groupList={groupList} onChange={(checkedArr: Array<string>) => handleChange(checkedArr)} />
+            <AdCheckboxGroup checkedArr={checkedArray} groupList={groupList} onChange={(checkedArr: Array<string>) => handleChange(checkedArr)} />
           </View>
         </View>
 

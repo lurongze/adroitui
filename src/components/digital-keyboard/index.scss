@@ -17,9 +17,9 @@
         display: flex;
         justify-content: space-around;
         & .ad--num{
-            height: 100px;
-            line-height: 100px;
-            border-bottom: 4px solid var(--ad-font-color-desc);
+            height: 120px;
+            line-height: 120px;
+            border-bottom: 6px solid var(--ad-font-color-desc);
             text-align: center;
             font-size: var(--ad-font-size-1);
             font-weight: 700;

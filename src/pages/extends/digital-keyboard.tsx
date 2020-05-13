@@ -49,7 +49,7 @@ export default function Index() {
 
       <View className="lister">
         <View className="header">
-          <Text>显示圆点</Text>
+          <Text>显示为圆点</Text>
           <View className="left-line"></View>
         </View>
         <View className="show-area">
