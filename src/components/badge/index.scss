@@ -1,31 +1,18 @@
 @import "../base.scss";
-.arrow-circle {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--ad-main-color);
-  box-sizing: border-box;
-  .arrow {
-      width: 10px;
-      height: 10px;
-      border-top: 5px solid;
-      border-right: 5px solid;
-      border-color: #ffffff;
-  }
-  transition: all 0.5s ease;
-  &.right {
-      transform: rotateZ(45deg);
-  }
-  &.up {
-      transform: rotateZ(-45deg);
-  }
-  &.down {
-      transform: rotateZ(135deg);
-  }
-  &.left {
-    transform: rotateZ(-135deg);
-}
+.ad-badge{
+    height: 40px;
+    min-width: 40px;
+    display: inline-block;
+    text-align: center;
+    line-height: 40px;
+    font-size: var(--ad-font-size-4);
+    color: white;
+    background-color: var(--ad-main-color);
+    border-radius: 20px;
+    &.ad-len{
+        padding: 0 10px;
+    }
+    &.tap-active:active{
+        background-color: var(--ad-active-bg-color);
+    }
 }

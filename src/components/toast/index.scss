@@ -1,60 +1,65 @@
 @import "../base.scss";
-.ad--toast-mask{
-    display: none;
-    justify-content: center;
-    align-items: center;
-    &.ad--mask-base{
-        background-color: transparent;
-    }
-    
-    &.ad--toastAnimate{
-        display: flex;
-        animation: toastFrame ease-in-out forwards;
-    }
-    &.ad--toastAnimateIn{
-        display: flex;
-        animation: toastFrame1 ease-in-out forwards;
-    }
-    & .ad--toast{
-        background-color: #4c4c4c;
-        color: #ffffff;
-        font-size: var(--ad-font-size-3);
-        padding: 15px 25px;
-        border-radius: 9px;
-        transform: translateY(-10vh);
-    }
+.ad--toast-mask {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  &.ad--mask-base {
+    background-color: transparent;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 400;
+    left: 0;
+    top: 0;
+    // background-color: rgba(#000, 0.5);
+  }
+
+  &.ad--toastAnimate {
+    display: flex;
+    animation: toastFrame ease-in-out forwards;
+  }
+  &.ad--toastAnimateIn {
+    display: flex;
+    animation: toastFrame1 ease-in-out forwards;
+  }
+  & .ad--toast {
+    background-color: #4c4c4c;
+    color: #ffffff;
+    font-size: var(--ad-font-size-3);
+    padding: 15px 25px;
+    border-radius: 9px;
+    transform: translateY(-10vh);
+  }
 }
 
 @keyframes toastFrame {
-    0% {
-        opacity: 0;
-    }
+  0% {
+    opacity: 0;
+  }
 
-    30% {
-        opacity: 1;
-    }
+  30% {
+    opacity: 1;
+  }
 
+  70% {
+    opacity: 1;
+  }
 
-    70%{
-        opacity: 1;
-    }
-
-    100% {
-        opacity: 0;
-    }
+  100% {
+    opacity: 0;
+  }
 }
 
 @keyframes toastFrame1 {
-    0% {
-        opacity: 0;
-    }
+  0% {
+    opacity: 0;
+  }
 
-    30% {
-        opacity: 1;
-    }
+  30% {
+    opacity: 1;
+  }
 
-    100% {
-        opacity: 1;
-    }
+  100% {
+    opacity: 1;
+  }
 }
-

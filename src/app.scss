@@ -109,6 +109,15 @@ page .adpage {
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
+        &.description {
+            display: inline-block;
+            font-size: 28px;
+            color: #888888;
+            padding: 0 50px;
+            width: 100vw;
+            box-sizing: border-box;
+            margin: 20px 0;
+        }
     }
     & .desc {
         width: 100vw;

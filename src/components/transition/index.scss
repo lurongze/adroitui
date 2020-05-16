@@ -6,6 +6,61 @@
     bottom: 0;
     z-index: 500;
     transform: translate3d(0, 100%, 0);
+    &.ad--drawer{
+        width: auto;
+        height: 100vh;
+        left: 0;
+        top: 0;
+        transform: translate3d(-100%,0,0);
+        
+        &.ad--drawer-open{
+            transform: translate3d(0,0,0);
+            transition: all .5s ease;
+        }
+        &.ad--drawer-close{
+            transform: translate3d(-100%,0,0);
+            transition: all .5s ease;
+        }
+        &.right{
+            left: auto;
+            right: 0;
+            transform: translate3d(100%,0,0);
+            &.ad--drawer-open{
+                transform: translate3d(0,0,0);
+                transition: all .5s ease;
+            }
+            &.ad--drawer-close{
+                transform: translate3d(100%,0,0);
+                // transition: all .5s ease;
+            }
+        }
+    }
+
+    &.ad--slideShow{
+        transform: translate3d(0, 0, 0);
+        transition: all .5s ease;
+    }
+    &.ad--slideHide{
+        transform: translate3d(0, 100%, 0);
+        transition: all .1s ease;
+    }
+    &.top{
+        left: 0;
+        bottom: auto;
+        top: 0;
+        z-index: 500;
+        transform: translate3d(0, -100%, 0);
+        &.ad--slideShow{
+            transform: translate3d(0, 0, 0);
+            transition: all .5s ease;
+        }
+        &.ad--slideHide{
+            transform: translate3d(0, -100%, 0);
+            transition: all .2s ease;
+        }
+    }
+
+
 }
 .ad--transition-bounce{
     position: fixed;
@@ -22,16 +77,26 @@
 .ad--transition-mask {
     display: none;
 }
+.ad--mask-base{
+    // display: block;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 400;
+    background-color: rgba(black, .8);
+}
 .ad--fadeShow {
     display: block;
-    animation: ad--fadeIn 0.05s ease forwards;
+    animation: ad--fadeIn .5s ease forwards;
 }
-.ad--slideShow {
-    animation: ad--slideInUp 0.3s ease-in-out forwards;
-}
-.ad--slideHide {
-    animation: ad--slideDown 0.2s ease-in-out forwards;
-}
+// .ad--slideShow {
+//     animation: ad--slideInUp 0.3s ease-in-out forwards;
+// }
+// .ad--slideHide {
+//     animation: ad--slideDown 0.2s ease-in-out forwards;
+// }
 
 .ad--bounceIn {
     animation: ad--bounceInFrame 0.2s ease-in-out forwards;
@@ -50,27 +115,6 @@
     }
 }
 
-@keyframes ad--slideInUp {
-    from {
-        transform: translate3d(0, 100%, 0);
-        visibility: visible;
-    }
-
-    to {
-        transform: translate3d(0, 0, 0);
-    }
-}
-
-@keyframes ad--slideDown {
-    from {
-        transform: translate3d(0, 0, 0);
-    }
-
-    to {
-        transform: translate3d(0, 100%, 0);
-        visibility: visible;
-    }
-}
 
 @keyframes ad--bounceInFrame {
     from{
@@ -85,12 +129,12 @@
 
 @keyframes ad--bounceOutFrame {
     20% {
-      transform: scale3d(0.9, 0.9, 0.9);
+     // transform: scale3d(0.9, 0.9, 0.9);
     }
   
-    50%,
+    // 50%,
     55% {
-      opacity: 1;
+      opacity: 0;
     }
   
     to {

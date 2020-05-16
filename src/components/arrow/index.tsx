@@ -5,8 +5,8 @@ import "./index.scss";
 interface propsType {
   // children?: any, //
   // size?: string; // loading的宽高，默认'20px'
-  color?: string; // 颜色
-  bgColor?: string; // 背景色
+  color?: string, // 颜色
+  bgColor?: string, // 背景色
   // borderWidth?: string; // 边框宽度
   direct?: 'left'|'right'|'up'|'down'
   // text?: string; // 文字

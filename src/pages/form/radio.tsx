@@ -21,6 +21,15 @@ export default function Index() {
     <View className={`page-padding ${theme}`}>
       <View className="lister">
         <View className="header">
+          <Text>说明</Text>
+          <View className="left-line"></View>
+        </View>
+        <View className="show-area description">
+          Raido和RadioGroup都是受控组件
+        </View>
+      </View>
+      <View className="lister">
+        <View className="header">
           <Text>单选项样式</Text>
           <View className="left-line"></View>
         </View>

@@ -12,7 +12,7 @@ export default function Index() {
         { title: "自定义主题色", path: "/pages/base/theme" },
         { title: "Loading加载", path: "/pages/base/loading" },
         { title: "CSS箭头", path: "/pages/base/arrow" },
-        { title: "Badge徽章", path: "" },
+        { title: "Badge徽章", path: "/pages/base/badge" },
         { title: "List列表", path: "" },
         { title: "Card卡片", path: "" },
         { title: "Footer页脚", path: "" },
@@ -56,7 +56,7 @@ export default function Index() {
       list: [
         { title: "数字键盘", path: "/pages/extends/digital-keyboard" },
         { title: "登录页面", path: "" },
-        { title: "Drawer抽屉", path: "" },
+        { title: "Drawer抽屉", path: "/pages/extends/drawer" },
         { title: "城市选择", path: "" },
         { title: "日期组件", path: "" },
         { title: "时间轴", path: "" },

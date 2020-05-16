@@ -1,5 +1,6 @@
 export { default as AdActionSheet } from "./components/action-sheet/index";
 export { default as AdArrow } from "./components/arrow/index";
+export { default as AdBadge } from "./components/badge/index";
 export { default as AdButton } from "./components/button/index";
 export { default as AdCheckbox } from "./components/checkbox/index";
 export { default as AdCheckboxGroup } from "./components/checkbox/group";
@@ -16,6 +17,7 @@ export { default as AdToast } from "./components/toast/index";
 export { default as AdTooltips } from "./components/tooltips/index";
 export { default as AdTransitionBounce } from "./components/transition/bounce";
 export { default as AdTransitionSlide } from "./components/transition/slide";
+export { default as AdTransitionDrawer } from "./components/transition/drawer";
 
 
 
