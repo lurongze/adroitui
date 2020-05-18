@@ -1,6 +1,7 @@
 import Taro, { useState } from "@tarojs/taro";
 import { View, Text } from "@tarojs/components";
 import { AdButton } from '../../index';
+import Clock from '../../components/svg-icon/clock';
 
 export default function Index() {
   const [theme] = useState(() => {
@@ -16,7 +17,8 @@ export default function Index() {
   }
   return (
     <View className={`page-padding ${theme}`}>
-      <View className="lister" onClick={()=>{setShow(true)}}>
+      <Clock />
+      <View className="lister">
         <View className="header">
           <Text>自定义主题色</Text>
           <View className="left-line"></View>

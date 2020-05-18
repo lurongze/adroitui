@@ -30,11 +30,12 @@ class App extends Component {
    */
   config: Config = {
     pages: [
-      'pages/index/index',
+      'pages/index',
       'pages/base/theme',
       'pages/base/loading',
       'pages/base/arrow',
       'pages/base/badge',
+      'pages/base/footer',
       'pages/nav/tabs',
       'pages/extends/digital-keyboard',
       'pages/extends/drawer',

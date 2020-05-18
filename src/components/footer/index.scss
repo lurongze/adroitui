@@ -1,1 +1,24 @@
 @import "../base.scss";
+.ad--footer{
+    display: flex;
+    width: 100vw;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    font-size: var(--ad-font-size-5);
+    & .ad--link-list,.ad--footer-text{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        & .ad--link{
+            color: var(--ad-link-color);
+            // border-right: 1px solid var(--ad-link-color);
+            // &:last-child{
+            //     border: none;
+            // }
+        }
+    }
+    & .ad--footer-text{
+        color: var(--ad-font-color-light-grey);
+    }
+}

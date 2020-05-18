@@ -1,6 +1,6 @@
 import Taro, { useState, useEffect } from "@tarojs/taro";
 import { View, Text } from "@tarojs/components";
-import ThemeControl from "../themeControl";
+import ThemeControl from "./themeControl";
 import "./index.scss";
 export default function Index() {
   const list = [
@@ -15,7 +15,7 @@ export default function Index() {
         { title: "Badge徽章", path: "/pages/base/badge" },
         { title: "List列表", path: "" },
         { title: "Card卡片", path: "" },
-        { title: "Footer页脚", path: "" },
+        { title: "Footer页脚", path: "/pages/base/footer" },
         { title: "悬浮按钮", path: "" },
         { title: "图片选择", path: "" }
       ]
