@@ -13,10 +13,14 @@ interface propsType {
 
 export default (props: propsType) => {
   const { size = "", color = "", text = "", borderWidth="" } = props;
-  let styleObj: Object = {};
+  let styleObj: {borderColor?:string,width?:string,height?:string,borderWidth?:string} = {};
+  let textObj:{color?:string} = {};
   if (color !== "") {
     styleObj = Object.assign(styleObj, {
       borderColor: `${color} transparent transparent`
+    });
+    textObj = Object.assign(textObj,{
+      color
     });
   }
   if (size !== "") {
@@ -34,7 +38,7 @@ export default (props: propsType) => {
   return (
     <View className="ad--loading">
       <View className="ad--loading-ring" style={styleObj}></View>
-      {text && <Text>{text}</Text>}
+      {text && <Text style={textObj}>{text}</Text>}
     </View>
   );
 };

@@ -36,6 +36,8 @@ class App extends Component {
       'pages/base/arrow',
       'pages/base/badge',
       'pages/base/footer',
+      'pages/base/divider',
+      'pages/base/list',
       'pages/nav/tabs',
       'pages/extends/digital-keyboard',
       'pages/extends/drawer',

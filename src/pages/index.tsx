@@ -13,7 +13,8 @@ export default function Index() {
         { title: "Loading加载", path: "/pages/base/loading" },
         { title: "CSS箭头", path: "/pages/base/arrow" },
         { title: "Badge徽章", path: "/pages/base/badge" },
-        { title: "List列表", path: "" },
+        { title: "分割线", path: "/pages/base/divider" },
+        { title: "List列表", path: "/pages/base/list" },
         { title: "Card卡片", path: "" },
         { title: "Footer页脚", path: "/pages/base/footer" },
         { title: "悬浮按钮", path: "" },
@@ -62,7 +63,6 @@ export default function Index() {
         { title: "时间轴", path: "" },
         { title: "滚动消息", path: "" },
         { title: "弹层选择", path: "" },
-        { title: "分割线", path: "" },
         { title: "轮播", path: "" },
         { title: "表单", path: "" }
       ]

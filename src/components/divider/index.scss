@@ -1,0 +1,20 @@
+@import "../base.scss";
+.ad--divider {
+  display: flex;
+  width: 100vw;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--ad-font-size-5);
+  color: var(--ad-font-color-grey);
+  padding: 15px 0;
+  & .ad--divider-text {
+    padding: 0 10px;
+  }
+  & .ad--divider-line {
+    width: 20vw;
+    border-width: 1px;
+    height: 2px;
+    background-color: var(--ad-font-color-light-grey);
+  }
+}

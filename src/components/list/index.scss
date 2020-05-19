@@ -1,0 +1,27 @@
+@import "../base.scss";
+.ad--list {
+  display: flex;
+  width: 100vw;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  padding-left: 15px;
+  font-size: var(--ad-font-size-2);
+  color: var(--ad-font-color-desc);
+  & .ad--list-item{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    min-height: 80px;
+    border-bottom: 1px solid var(--ad-border-color);
+    & .ad--list-icon{
+      width: 50px;
+      height: 50px;
+      border: 50%;
+      background-position: center;
+      background-size: contain;
+    }
+    & .ad--list-title{
+      flex: 1;
+    }
+  }
+}
