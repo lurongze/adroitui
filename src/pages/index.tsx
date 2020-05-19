@@ -18,7 +18,7 @@ export default function Index() {
         { title: "Card卡片", path: "" },
         { title: "Footer页脚", path: "/pages/base/footer" },
         { title: "悬浮按钮", path: "" },
-        { title: "图片选择", path: "" }
+        // { title: "图片选择", path: "" }
       ]
     },
     {

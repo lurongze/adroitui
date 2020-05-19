@@ -12,7 +12,7 @@ export default function Index() {
     } else {
       Taro.setStorageSync("theme", "adpage");
     }
-    Taro.reLaunch({url:'/pages/index/index'});
+    Taro.reLaunch({url:'/pages/index'});
   }
   return (
     <View className={`page-padding ${theme}`}>
