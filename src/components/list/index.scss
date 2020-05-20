@@ -25,17 +25,63 @@
     &:active{
       background-color: var(--ad-active-bg-color);
     }
+    &.msg{
+      min-height: 120px;
+    }
     & .ad--list-icon{
       width: 50px;
       height: 50px;
       border-radius: 50%;
       background-position: center;
       background-size: contain;
+      &.avatar{
+        width: 80px;
+        height: 80px;
+      }
     }
     & .ad--list-title{
       flex: 1;
       box-sizing: border-box;
       padding: 0 0 0 10px;
+    }
+    & .ad--list-center{
+      display: flex;
+      flex: 1;
+      flex-wrap: wrap;
+      align-content: center;
+      & .ad--list-nickname,.ad--list-msg{
+        height: 40px;
+        line-height: 40px;
+        font-size: var(--ad-font-size-4);
+        color: var(--ad-font-color-desc);
+        text-overflow: ellipsis;
+        overflow: hidden;
+        display: inline-block;
+        width: 100%;
+      }
+      & .ad--list-msg{
+        color: var(--ad-font-color-grey);
+      }
+    }
+    & .ad--list-end{
+      display: flex;
+      flex-wrap: wrap;
+      box-sizing: border-box;
+      padding-right: 15px;
+      & .ad--list-badge,.ad--list-time{
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+        height: 40px;
+        line-height: 40px;
+        font-size: var(--ad-font-size-4);
+        color: var(--ad-font-color-desc);
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+      & .ad--list-time{
+        color: var(--ad-font-color-light-grey);
+      }
     }
   }
 }

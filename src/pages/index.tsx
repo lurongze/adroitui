@@ -15,9 +15,9 @@ export default function Index() {
         { title: "Badge徽章", path: "/pages/base/badge" },
         { title: "分割线", path: "/pages/base/divider" },
         { title: "List列表", path: "/pages/base/list" },
-        { title: "Card卡片", path: "" },
+        // { title: "Card卡片", path: "" },
         { title: "Footer页脚", path: "/pages/base/footer" },
-        { title: "悬浮按钮", path: "" },
+        // { title: "悬浮按钮", path: "" },
         // { title: "图片选择", path: "" }
       ]
     },
@@ -61,10 +61,10 @@ export default function Index() {
         { title: "城市选择", path: "" },
         { title: "日期组件", path: "" },
         { title: "时间轴", path: "" },
-        { title: "滚动消息", path: "" },
-        { title: "弹层选择", path: "" },
-        { title: "轮播", path: "" },
-        { title: "表单", path: "" }
+        { title: "滚动消息", path: "/pages/extends/scroll-notice" },
+        // { title: "弹层选择", path: "" },
+        // { title: "轮播", path: "" },
+        // { title: "表单", path: "" }
       ]
     }
   ];

@@ -1,0 +1,43 @@
+@import "../base.scss";
+.ad--scnotice{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    color: var(--ad-font-color-grey);
+    box-sizing: border-box;
+    padding: 0 15px;
+    background-color: var(--ad-main-color);
+    height: 60px;
+    & .ad--scnotice-icon{
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background-position: center;
+        background-size: cover;
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAEFklEQVRYR8WXW2gcVRjH/9+OCUkVtkGQ3qClQvVJE7AIWuMFihWrCC0oVmsoEkwwmbNNUBSio0ZofNg5324IPuiDItRbK61CoCBVU5BYtbYV8YYFb1QwMimIGHfnLyfMhu1mk2xW1pyn4XAuv/Nd/yNY4SErfD/qBjDGrAbQXigUzo+Ojn5d70PqAshkMptJjgPYQvIfADep6mQ9EMsG8H1/G4CjItJWupDkAVV9ouEAvu/vBfCSiDSRPAXgrIjsJRmq6v5KgCAILomiqEtEJsMwPFsNsFYLiDHmAIDHkkOORFF0XzqdHhKRJxcC8H1/q4h8AmCa5PWq+k0lxJIA3d3dq1pbW98QkZ3J5mestYH79n3/+cUAkjXjIrIDwA/FYrEjn89fKIeYBzA4OHhpsVi8jqTEceyJSFZErgEwQ/IBVX2rdEA1gCAImqempq7I5/M/u3VJtnwJYD0Aa63NVAVwFxcKhWGSD4vIZeWLSE4BuENVT5bPVwMwxrxP8gYA21X1RGKFThH5kGQxlUpdHYbh96Vz5izg+76KSD+An5y5yiJ82vO8R7PZrJu/aCwA8BqAPSS/amtr6wiCYCaxxMsA9pE8pKq7qwH8IiLrUqlUezabPV1LSlUD6OnpaWtubj4jIhsAzMWLMWYtgFm3zMzMrB8bGzvvvucsYIzh7ITI5WEY/lEvQGLybSIyQfJvABtV9bfECu8BuJPkkKoONwwggTgmIttFxIRhqAnAPgDOFe9aa+9uKIAxpg9ADsCb1tp7E4BbABwneUZVr20oQCaTuYvkUZIfqerNCcAmAOdcYbLWumbWmBhIXLBLRN4GMGGt7XRzfX19V3qe51Kw8QDGmGcBDAE4aK29P4FyMXEMwGlrbXvDLBAEQSqKou8AbI7juCeXy73oLstkMj5JC+CItfaehgG4rikirwD4E8AGa22UxICrpK7MP62qzkIXxcCvANbGcXxbLpc7Xm8dGBgY2FgsFr8AsJrksKo6Nzj/d3ie9zmAmOS6Um2oVopd6fy4vBS7/ar6Y42l+FUADwL4VEQ6wzD8K3n9BwBcNhy21u6aV4qTtntQRGYLRMX4neTOStm1QC94B8DtJDtK/b+/v39HKpUaT5rRljAM53rNvHbsTBjH8aZq7TiO44dyudzrJbha9EBvb++apqamUyKyZtF2vJDPqwiS56y1TyVptagg6erqakmn05NOT5A819LS0jEyMjJdfteSiihZXCnJDkdRtGcpSWaMuRHACZIXPM/bms1mv618aK0As/sqROlnAE6KyCOLiFJXD/aTnFhIti8LIIFwrda11XTZa16w1j5eS+r+JwuUNrsfkziOnTy/1c2R3K2qh/43gLIsuCqO41X5fN79I9Q1lu2Cum5ZZNOKA/wLWIycP2fwgtsAAAAASUVORK5CYII=);
+    }
+    & .ad--scnotice-content{
+        flex: 1;
+        overflow: hidden;
+        height: 60px;
+        font-size: var(--ad-font-size-4);
+        white-space: nowrap;
+        
+        & .ad--scnotice-txt{
+            transform: translateX(100vw);
+            animation: scrollNotice 10s ease forwards;
+        }
+    }
+    & .ad--scnotice-close{
+        font-size: var(--ad-font-size-2);
+        font-weight: 700;
+    }
+}
+@keyframes scrollNotice{
+    from{
+        transform: translateX(100vw);
+    }
+    to{
+        transform: translateX(0);
+    }
+}

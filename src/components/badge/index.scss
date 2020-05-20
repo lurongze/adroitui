@@ -1,5 +1,5 @@
 @import "../base.scss";
-.ad-badge{
+.ad--badge{
     height: 40px;
     min-width: 40px;
     display: inline-block;
@@ -9,6 +9,9 @@
     color: white;
     background-color: var(--ad-main-color);
     border-radius: 20px;
+    &.warn{
+        background-color: var(--ad-warn-color);
+    }
     &.ad-len{
         padding: 0 10px;
     }
