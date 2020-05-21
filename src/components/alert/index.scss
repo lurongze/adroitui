@@ -3,11 +3,22 @@
     display: flex;
     width: 100%;
     align-items: center;
-    color: var(--ad-font-color-grey);
+    color: white;
     box-sizing: border-box;
     padding: 0 15px;
     background-color: var(--ad-main-color);
-    height: 60px;
+    transition: all .1s ease-in-out;
+    min-height: 65px;
+    &.warn{
+        background-color: var(--ad-warn-color);
+    }
+    &.close{
+        // transform: scaleY(0);
+        transform: scale3d(0, 0, 0);
+        overflow: hidden;
+        // height: 0;
+        // display: none;
+    }
     & .ad--scnotice-icon{
         width: 30px;
         height: 30px;
@@ -19,14 +30,11 @@
     & .ad--scnotice-content{
         flex: 1;
         overflow: hidden;
-        height: 60px;
+        box-sizing: border-box;
+        padding: 0 10px;
+        // height: 60px;
         font-size: var(--ad-font-size-4);
-        white-space: nowrap;
         
-        & .ad--scnotice-txt{
-            transform: translateX(100vw);
-            animation: scrollNotice 10s ease forwards;
-        }
     }
     & .ad--scnotice-close{
         font-size: var(--ad-font-size-2);
@@ -35,9 +43,13 @@
 }
 @keyframes scrollNotice{
     from{
-        transform: translateX(100vw);
+        // transform: translateX(100vw);
+        height: auto;
+
     }
     to{
-        transform: translateX(0);
+        height: 0;
+        // transform: translateX(0);
+        transform: scale3d(0, 0, 0);
     }
 }

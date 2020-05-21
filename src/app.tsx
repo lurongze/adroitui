@@ -41,7 +41,7 @@ class App extends Component {
       'pages/nav/tabs',
       'pages/extends/digital-keyboard',
       'pages/extends/drawer',
-      'pages/extends/scroll-notice',
+      'pages/extends/alert',
       'pages/feedback/index',
       'pages/feedback/dialog',
       'pages/feedback/hc-dialog',

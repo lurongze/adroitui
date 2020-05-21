@@ -61,7 +61,7 @@ export default function Index() {
         { title: "城市选择", path: "" },
         { title: "日期组件", path: "" },
         { title: "时间轴", path: "" },
-        { title: "滚动消息", path: "/pages/extends/scroll-notice" },
+        { title: "Alert消息", path: "/pages/extends/alert" },
         // { title: "弹层选择", path: "" },
         // { title: "轮播", path: "" },
         // { title: "表单", path: "" }
