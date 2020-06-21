@@ -12,6 +12,8 @@ interface propsType {
   showIcon?: boolean, // 是否显示图标
   tapClose?: boolean, // 是否点击关闭，默认true
   onClick?: Function,
+  scroll?: boolean, // 是否滚动显示
+  speed?: number, // 速度，会用text的数字乘以这个值来作为一次滚动的周期
   // onClick?: Function, //
 }
 
@@ -25,6 +27,8 @@ export default (props: propsType) => {
     showClose = true,
     showIcon = true,
     tapClose = true,
+    scroll = false,
+    speed = 0.2,
     onClick
   } = props;
   let styleObj: Object = {};
@@ -38,14 +42,19 @@ export default (props: propsType) => {
       color
     });
   }
-  let bgImg:{backgroundImage?:string} = {};
-  if(icon!==""){
-    bgImg = Object.assign(bgImg,{backgroundImage:`url(${icon})`})
+  let bgImg: { backgroundImage?: string } = {};
+  if (icon !== "") {
+    bgImg = Object.assign(bgImg, { backgroundImage: `url(${icon})` })
   }
 
   const [isClose, setIsClose] = useState<boolean>(false);
   // const [isRender, setIsRender] = useState<boolean>(true);
-  
+  let animateTime = {};
+  if (scroll) {
+    animateTime = { animationDuration: `${text.length * speed}s` };
+  } else {
+    animateTime = { animation: 'none' };
+  }
 
   return (
     <View
@@ -53,11 +62,11 @@ export default (props: propsType) => {
         tapClose && setIsClose(true);
         onClick && onClick();
       }}
-      className={`ad--scnotice ${type} ${isClose?'close':''}`}
+      className={`ad--scnotice ${type} ${isClose ? 'close' : ''}`}
       style={styleObj}
     >
       {showIcon && <View style={bgImg} className="ad--scnotice-icon"></View>}
-        <View className="ad--scnotice-content">{text}</View>
+      <View className="ad--scnotice-content" style={animateTime}>{text}</View>
       {showClose && <View className="ad--scnotice-close">×</View>}
     </View>
   );
