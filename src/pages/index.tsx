@@ -99,8 +99,9 @@ export default function Index() {
       <View className="title">Adroit UI 组件库</View>
       <Text className="description">
         一个基于Taro框架的简单UI组件库,风格参考微信小程序设计指南和其他一些优秀UI库。
+        主要是学习如何开发Taro的UI组件库。
         兼容微信小程序，支付宝小程序，H5。可自定义主题色。
-        组件仍然在不断开发中，预计5月底~6月中把使用文档写出来后，会同时把项目代码开源并发布到NPM上。
+        组件仍然在不断开发中。
       </Text>
 
       {list.map((item: any) => {
