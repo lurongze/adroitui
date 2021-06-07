@@ -51,8 +51,18 @@ class App extends Component {
       'pages/form/checkbox',
       'pages/form/radio',
       'pages/form/switch',
-      'pages/form/button'
+      'pages/form/button',
+      'pages/notebook/index'
     ],
+    tabBar: {
+      list: [{
+        text: 'UI',
+        pagePath: 'pages/index'
+      },{
+        text: '笔记',
+        pagePath: 'pages/notebook/index'
+      }]
+    },
     window: {
       backgroundTextStyle: 'light',
       navigationBarBackgroundColor: '#fff',
